@@ -27,7 +27,7 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'test',
+        path: 'receipts',
         children: [
           {
             path: '',
@@ -35,6 +35,15 @@ const routes: Routes = [
           }
         ]
       },
+      {
+        path: "profile",
+        children: [
+          { 
+            path: '',
+            loadChildren: '../profile/profile.module#ProfilePageModule'
+          }
+        ]
+      },      
       {
         path: '',
         redirectTo: '/menu/home',

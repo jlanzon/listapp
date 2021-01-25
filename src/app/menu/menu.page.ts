@@ -21,8 +21,8 @@ export class MenuPage {
       icon: ""
     },
     {
-      title: "receipt",
-      url: "/menu/test",
+      title: "Receipts",
+      url: "/menu/receipts",
       icon: ""
     }
   ];

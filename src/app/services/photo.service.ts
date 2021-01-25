@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { Storage } from '@ionic/storage';
+import { Plugins, CameraResultType, Capacitor, FilesystemDirectory, 
+  CameraPhoto, CameraSource } from '@capacitor/core';
 
 @Injectable({
   providedIn: 'root'

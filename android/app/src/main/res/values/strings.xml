@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">ListApp</string>
-    <string name="title_activity_main">ListApp</string>
-    <string name="package_name">com.lanzon.listapp</string>
-    <string name="custom_url_scheme">com.lanzon.listapp</string>
-</resources>

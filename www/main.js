@@ -438,6 +438,10 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"../profile/profile.module": [
+		"./src/app/profile/profile.module.ts",
+		"profile-profile-module"
+	],
 	"../tab1/tab1.module": [
 		"./src/app/tab1/tab1.module.ts",
 		"tab1-tab1-module"
@@ -450,9 +454,9 @@ var map = {
 		"./src/app/tab3/tab3.module.ts",
 		"tab3-tab3-module"
 	],
-	"./tabs/tabs.module": [
-		"./src/app/tabs/tabs.module.ts",
-		"tabs-tabs-module"
+	"./menu/menu.module": [
+		"./src/app/menu/menu.module.ts",
+		"menu-menu-module"
 	]
 };
 function webpackAsyncContext(req) {
@@ -501,7 +505,7 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 
 
 var routes = [
-    { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' }
+    { path: '', loadChildren: './menu/menu.module#MenuPageModule' },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
