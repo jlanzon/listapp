@@ -87,6 +87,22 @@ module.exports = [
         "clobbers": [
             "SQLitePlugin"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-vibration/src/browser/Vibration.js",
+        "id": "cordova-plugin-vibration.Vibration",
+        "pluginId": "cordova-plugin-vibration",
+        "merges": [
+            "navigator"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-vibration/www/vibration.js",
+        "id": "cordova-plugin-vibration.notification",
+        "pluginId": "cordova-plugin-vibration",
+        "merges": [
+            "navigator"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -100,7 +116,8 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "5.0.3",
     "cordova-plugin-ionic-webview": "4.1.2",
     "cordova-plugin-ionic-keyboard": "2.2.0",
-    "cordova-sqlite-storage": "3.4.0"
+    "cordova-sqlite-storage": "3.4.0",
+    "cordova-plugin-vibration": "3.1.1"
 }
 // BOTTOM OF METADATA
 });

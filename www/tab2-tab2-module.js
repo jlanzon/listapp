@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>\r\n      Camera\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-grid>\r\n    <ion-row>\r\n    <ion-col col-2 *ngFor=\"let photo of photoService.photos\">\r\n        <img [src]=\"photo.data\" />\r\n        </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n  \r\n  <ion-fab vertical=\"bottom\" horizontal=\"center\" slot=\"fixed\">\r\n      <ion-fab-button (click)=\"photoService.takePicture()\">\r\n        <ion-icon name=\"camera\"></ion-icon>\r\n      </ion-fab-button>\r\n  </ion-fab>\r\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>\r\n      Camera\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-card *ngFor=\"let photo of photoService.photos; let i of index\">\r\n    <img [src]=\"photo.data\" />\r\n    <ion-card-header>\r\n      <ion-card-subtitle>Picture</ion-card-subtitle>\r\n      <ion-card-title>{{ photo.id }}</ion-card-title>\r\n    </ion-card-header>\r\n    <ion-card-content>\r\n      {{photo.description}}\r\n    </ion-card-content>\r\n    <ion-button (click)=\"removePic()\"> Delete picture</ion-button>\r\n  </ion-card>\r\n  \r\n  <ion-fab vertical=\"bottom\" horizontal=\"center\" slot=\"fixed\">\r\n      <ion-fab-button (click)=\"photoService.takePicture()\">\r\n        <ion-icon name=\"camera\"></ion-icon>\r\n      </ion-fab-button>\r\n  </ion-fab>\r\n</ion-content>");
 
 /***/ }),
 
@@ -53,12 +53,16 @@ var PhotoService = /** @class */ (function () {
             quality: 100,
             destinationType: this.camera.DestinationType.DATA_URL,
             encodingType: this.camera.EncodingType.JPEG,
-            mediaType: this.camera.MediaType.PICTURE
+            mediaType: this.camera.MediaType.PICTURE,
+            saveToPhotoAlbum: true
         };
         this.camera.getPicture(options).then(function (imageData) {
             // Add new photo to gallery
+            console.log("doing this now");
             _this.photos.unshift({
-                data: 'data:image/jpeg;base64,' + imageData
+                description: "somthing here. I would like to know how to edit this. how do i edit ionic storage once saved. pain in my ass ",
+                id: 1,
+                data: 'data:image/jpeg;base64,' + imageData,
             });
             // Save all photos for later viewing
             _this.storage.set('photos', _this.photos);
@@ -69,6 +73,7 @@ var PhotoService = /** @class */ (function () {
     };
     PhotoService.prototype.loadSaved = function () {
         var _this = this;
+        console.log("loaded pictures ");
         this.storage.get('photos').then(function (photos) {
             _this.photos = photos || [];
         });
@@ -192,6 +197,9 @@ var Tab2Page = /** @class */ (function () {
     }
     Tab2Page.prototype.ngOnInit = function () {
         this.photoService.loadSaved();
+    };
+    Tab2Page.prototype.removePic = function () {
+        console.log("somthing to happen");
     };
     Tab2Page.ctorParameters = function () { return [
         { type: _services_photo_service__WEBPACK_IMPORTED_MODULE_1__["PhotoService"] }

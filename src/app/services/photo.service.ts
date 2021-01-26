@@ -31,6 +31,7 @@ export class PhotoService {
 
       // Save all photos for later viewing
       this.storage.set('photos', this.photos);
+      console.log(this.photos)
     }, (err) => {
      // Handle error
      console.log("Camera issue: " + err);
@@ -44,6 +45,16 @@ export class PhotoService {
     this.storage.get('photos').then((photos) => {
       this.photos = photos || [];
     });
+  }
+
+  removePic(id: number)  {
+    console.log(this.photos[id])
+    console.log(1)
+    this.photos = this.photos.filter( photos => photos.id != id)
+  }
+
+  removeAllKey(){
+    this.storage.remove("photos")
   }
 
 }

@@ -126,6 +126,11 @@ var MenuPage = /** @class */ (function () {
                 title: "Receipts",
                 url: "/menu/receipts",
                 icon: ""
+            },
+            {
+                title: "Profile",
+                url: "/menu/profile",
+                icon: ""
             }
         ];
         this.selectedPath = "";

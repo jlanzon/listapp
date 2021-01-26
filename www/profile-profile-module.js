@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>Profile</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n  <ion-content>\n    <ion-grid>\n      <ion-row>\n        <ion-col col-2>\n          <p>somthing</p>\n        </ion-col>\n        <ion-col col-2>\n          <p>somthing</p>\n        </ion-col>\n        <ion-col col-2>\n          <p>somthing</p>\n        </ion-col>\n        <ion-col col-2>\n          <p>somthing</p>\n        </ion-col>\n        <ion-col col-2>\n          <p>somthing</p>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>Profile</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n  <ion-button (click)=\"increment()\">+1</ion-button>\n\n\n  <ion-grid>\n    <ion-row *ngFor=\"let n of numbers\">\n      <ion-col>\n        {{ n.number }}\n      </ion-col>\n      <ion-col>\n        {{ n.row }}\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>\n");
 
 /***/ }),
 
@@ -59,7 +59,7 @@ var ProfilePageModule = /** @class */ (function () {
                 _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
                 _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forChild(routes)
+                _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forChild(routes),
             ],
             declarations: [_profile_page__WEBPACK_IMPORTED_MODULE_5__["ProfilePage"]]
         })
@@ -110,7 +110,40 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 
 var ProfilePage = /** @class */ (function () {
     function ProfilePage() {
+        this.numbers = [
+            {
+                number: 1,
+                row: 1
+            },
+            {
+                number: 2,
+                row: 2
+            },
+            {
+                number: 3,
+                row: 3
+            },
+            {
+                number: 4,
+                row: 1
+            },
+            {
+                number: 5,
+                row: 2
+            },
+            {
+                number: 6,
+                row: 3
+            },
+            {
+                number: 7,
+                row: 1
+            }
+        ];
     }
+    ProfilePage.prototype.increment = function () {
+        this.numbers.unshift({ number: 1, row: 1 });
+    };
     ProfilePage.prototype.ngOnInit = function () {
     };
     ProfilePage = __decorate([

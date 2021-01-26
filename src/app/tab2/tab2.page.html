@@ -19,8 +19,11 @@
     <ion-card-content>
       {{photo.description}}
     </ion-card-content>
-    <ion-button (click)="removePic()"> Delete picture</ion-button>
+    <ion-button (click)="photoService.removePic(photo.id)"> Delete picture</ion-button>
   </ion-card>
+
+  <ion-button (click)="photoService.removeAllKey()" *ngIf=""> Delete All Pictures</ion-button>
+
   
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
       <ion-fab-button (click)="photoService.takePicture()">
