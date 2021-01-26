@@ -24,6 +24,11 @@ export class MenuPage {
       title: "Receipts",
       url: "/menu/receipts",
       icon: ""
+    },
+    {
+      title:"Profile",
+      url: "/menu/profile",
+      icon: ""
     }
   ];
 

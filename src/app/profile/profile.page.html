@@ -9,6 +9,18 @@
 
 <ion-content>
 
+  <ion-button (click)="increment()">+1</ion-button>
 
+
+  <ion-grid>
+    <ion-row *ngFor="let n of numbers">
+      <ion-col>
+        {{ n.number }}
+      </ion-col>
+      <ion-col>
+        {{ n.row }}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

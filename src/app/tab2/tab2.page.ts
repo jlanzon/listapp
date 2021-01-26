@@ -14,5 +14,8 @@ export class Tab2Page {
   ngOnInit() {
     this.photoService.loadSaved();
   }
+  removePic() { 
+    console.log("somthing to happen")
+} 
 
 }

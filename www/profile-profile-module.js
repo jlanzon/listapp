@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>Profile</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n\n\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>Profile</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n  <ion-content>\n    <ion-grid>\n      <ion-row>\n        <ion-col col-2>\n          <p>somthing</p>\n        </ion-col>\n        <ion-col col-2>\n          <p>somthing</p>\n        </ion-col>\n        <ion-col col-2>\n          <p>somthing</p>\n        </ion-col>\n        <ion-col col-2>\n          <p>somthing</p>\n        </ion-col>\n        <ion-col col-2>\n          <p>somthing</p>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n\n</ion-content>\n");
 
 /***/ }),
 
