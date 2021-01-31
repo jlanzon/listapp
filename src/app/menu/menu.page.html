@@ -8,18 +8,22 @@
     <ion-content>
       <ion-list>
         <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
-          <ion-item [routerLink]="p.url" routerDirection="root" routerLinkActive="active-item">
+          <ion-item [routerLink]="p.url" routerDirection="root">
+            <ion-icon [name]="p.icon" routerLinkActive="active-item" slot="start"></ion-icon>
             {{p.title}}
           </ion-item>
         </ion-menu-toggle>
       </ion-list>
     </ion-content>
 
-    <ion-footer>
+    <ion-footer class="bar-stable">
       <ion-toolbar>
-        <ion-item horizontal="end" routerLink="/menu/profile/">
-          Profile
-        </ion-item>
+        <ion-menu-toggle auto-hide="false">
+          <ion-item horizontal="end" routerLink="/menu/profile/">
+            <ion-icon name="person" routerLinkActive="active-item" slot="start"></ion-icon>
+            Profile
+          </ion-item>
+      </ion-menu-toggle>
       </ion-toolbar>
     </ion-footer>
 

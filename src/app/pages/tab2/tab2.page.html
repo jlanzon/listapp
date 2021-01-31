@@ -4,7 +4,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Camera
+      Gallery
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -19,14 +19,14 @@
     <ion-card-content>
       {{photo.description}}
     </ion-card-content>
-    <ion-button (click)="photoService.removePic(photo.id)"> Delete picture</ion-button>
+    <!-- <ion-button (click)="photoService.removePic(photo.id)"> Delete picture</ion-button> -->
   </ion-card>
 
-  <ion-button (click)="photoService.removeAllKey()" *ngIf=""> Delete All Pictures</ion-button>
+  <ion-button color="danger" (click)="photoService.removeAllKey()" > Delete All Pictures</ion-button>
 
   
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-      <ion-fab-button (click)="photoService.takePicture()">
+      <ion-fab-button (click)="addPhotoToGallery()">
         <ion-icon name="camera"></ion-icon>
       </ion-fab-button>
   </ion-fab>

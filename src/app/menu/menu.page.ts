@@ -13,23 +13,34 @@ export class MenuPage {
     {
       title: "Home Page",
       url: "/menu/home",
-      icon: ""
+      icon: "home",
+      vertical: "top"
     },
     {
-      title: "Camera",
-      url: "/menu/camera",
-      icon: ""
+      title: "Gallery",
+      url: "/menu/gallery",
+      icon: "images",
+      vertical: "top"
     },
     {
-      title: "Receipts",
-      url: "/menu/receipts",
-      icon: ""
+      title: "Receipts-test",
+      url: "/menu/receipts-test",
+      icon: "code-working",
+      vertical: "top"
     },
     {
-      title:"Profile",
-      url: "/menu/profile",
-      icon: ""
+      title:"receipt",
+      url: "/menu/receipt",
+      icon: "list",
+      vertical: "top"
+    },
+    {
+      title:"Receipts-Details",
+      url: "/menu/receipts-details/:id",
+      icon: "list-box",
+      vertical: "top"
     }
+    
   ];
 
   selectedPath = "";

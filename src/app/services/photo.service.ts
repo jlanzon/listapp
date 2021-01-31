@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { Storage } from '@ionic/storage';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -49,8 +50,7 @@ export class PhotoService {
 
   removePic(id: number)  {
     console.log(this.photos[id])
-    console.log(1)
-    this.photos = this.photos.filter( photos => photos.id != id)
+    // this.photos = this.photos.filter( photos => photos.id != id)
   }
 
   removeAllKey(){

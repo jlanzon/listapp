@@ -13,25 +13,25 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
+            loadChildren: '../pages/tab1/tab1.module#Tab1PageModule'
           }
         ]
       },
       {
-        path: 'camera',
+        path: 'gallery',
         children: [
           {
             path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
+            loadChildren: '../pages/tab2/tab2.module#Tab2PageModule'
           }
         ]
       },
       {
-        path: 'receipts',
+        path: 'receipts-test',
         children: [
           {
             path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
+            loadChildren: '../pages/tab3/tab3.module#Tab3PageModule'
           }
         ]
       },
@@ -40,10 +40,28 @@ const routes: Routes = [
         children: [
           { 
             path: '',
-            loadChildren: '../profile/profile.module#ProfilePageModule'
+            loadChildren: '../pages/profile/profile.module#ProfilePageModule'
           }
         ]
-      },      
+      },
+      { 
+        path: 'receipt',
+        children: [
+          {
+            path: '', 
+            loadChildren: '../pages/receipts/receipts.module#ReceiptsPageModule' 
+          }
+        ]
+      },
+      { 
+        path: '/receipts-details/:id',
+        children: [
+          {
+            path: '', 
+            loadChildren: '../pages/receipts-details/receipts-details.module#ReceiptsDetailsPageModule'
+          } 
+        ]
+      },
       {
         path: '',
         redirectTo: '/menu/home',
