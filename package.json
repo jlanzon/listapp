@@ -15,7 +15,6 @@
   "dependencies": {
     "@angular/common": "~8.2.11",
     "@angular/core": "~8.2.11",
-    "@angular/fire": "^6.1.4",
     "@angular/forms": "~8.2.11",
     "@angular/http": "~7.2.15",
     "@angular/platform-browser": "~8.2.11",
@@ -31,6 +30,8 @@
     "@ionic/angular": "^4.11.1",
     "@ionic/pwa-elements": "^3.0.2",
     "@ionic/storage": "^2.2.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
     "cordova-android": "8.1.0",
     "cordova-browser": "6.0.0",
     "cordova-ios": "5.0.1",

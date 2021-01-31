@@ -44,24 +44,6 @@ const routes: Routes = [
           }
         ]
       },
-      { 
-        path: 'receipt',
-        children: [
-          {
-            path: '', 
-            loadChildren: '../pages/receipts/receipts.module#ReceiptsPageModule' 
-          }
-        ]
-      },
-      { 
-        path: '/receipts-details/:id',
-        children: [
-          {
-            path: '', 
-            loadChildren: '../pages/receipts-details/receipts-details.module#ReceiptsDetailsPageModule'
-          } 
-        ]
-      },
       {
         path: '',
         redirectTo: '/menu/home',

@@ -28,18 +28,6 @@ export class MenuPage {
       icon: "code-working",
       vertical: "top"
     },
-    {
-      title:"receipt",
-      url: "/menu/receipt",
-      icon: "list",
-      vertical: "top"
-    },
-    {
-      title:"Receipts-Details",
-      url: "/menu/receipts-details/:id",
-      icon: "list-box",
-      vertical: "top"
-    }
     
   ];
 
