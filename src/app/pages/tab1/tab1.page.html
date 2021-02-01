@@ -8,8 +8,18 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
+<!-- {{ afAuth.auth.currentUser.displayName }} -->
 <ion-content>
+  <ion-card class="welcome-card" *ngIf="auth.user | async as user;">
+    <img src="https://www.callcentrehelper.com/images/stories/2018/11/welcome-red-sign-760.png" alt="" />
+    <ion-card-header>
+      <ion-card-subtitle>You are now logged in</ion-card-subtitle>
+      <ion-card-title>Welcome {{ user.displayName }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Now you are logged in, you can take pictures of receipts and store them. to take a picture, press the menu icon on the left and press the gallery button, or press the button in the bottom right to show some quick nav options </p>
+    </ion-card-content>
+  </ion-card>
     <ion-card class="welcome-card">
       <img src="/assets/shapes.svg" alt="" />
       <ion-card-header>

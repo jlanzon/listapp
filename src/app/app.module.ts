@@ -9,10 +9,34 @@ import { AppComponent } from './app.component';
 import { Camera } from '@ionic-native/camera/ngx';
 import { IonicStorageModule } from '@ionic/storage';
 
+//firebase code
+import {firebase, firebaseui, FirebaseUIModule} from 'firebaseui-angular';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import { environment } from 'src/environments/environment';
+
+const firebaseUiAuthConfig: firebaseui.auth.Config = {
+  signInFlow: 'popup',
+  signInOptions: [
+    firebase.auth.EmailAuthProvider.PROVIDER_ID,
+  ],
+  tosUrl: '/menu/terms',
+  privacyPolicyUrl: '/menu/privacy',
+  credentialHelper: firebaseui.auth.CredentialHelper.GOOGLE_YOLO
+};
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,IonicStorageModule.forRoot()],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    IonicStorageModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig)
+  ],
   providers: [
     StatusBar,
     SplashScreen,

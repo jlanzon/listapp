@@ -45,6 +45,33 @@ const routes: Routes = [
         ]
       },
       {
+        path: "terms",
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/terms/terms.module#TermsPageModule'
+          },
+        ]      
+      },
+      {
+        path: "privacy",
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/privacy/privacy.module#PrivacyPageModule'
+          },
+        ]      
+      },
+      {
+        path: "login",
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/login/login.module#LoginPageModule'
+          },
+        ]      
+      },
+      {
         path: '',
         redirectTo: '/menu/home',
         pathMatch: 'full'

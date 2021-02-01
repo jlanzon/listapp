@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router, RouterEvent } from '@angular/router';
 import { MenuController } from '@ionic/angular';
+import { AngularFireAuth} from "@angular/fire/auth"
+import firebase from 'firebase/app';
 
 @Component({
   selector: 'app-menu',
@@ -27,16 +29,21 @@ export class MenuPage {
       url: "/menu/receipts-test",
       icon: "code-working",
       vertical: "top"
-    },
-    
+    }, 
   ];
 
   selectedPath = "";
 
-  constructor(private menu: MenuController, private router: Router) { 
+  constructor(private menu: MenuController, private router: Router, public auth: AngularFireAuth) { 
     this.router.events.subscribe((event: RouterEvent) => {
       this.selectedPath = event.url;
     });
+  }
+  login() {
+    this.auth.signInWithPopup(new firebase.auth.EmailAuthProvider());
+  }
+  logout() {
+    this.auth.signOut();
   }
 }
 

@@ -7,13 +7,15 @@ import { FormsModule } from '@angular/forms';
 import { TabsPageRoutingModule } from './menu.router.module';
 
 import { MenuPage } from './menu.page';
+import { FirebaseUIModule } from 'firebaseui-angular';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    TabsPageRoutingModule
+    TabsPageRoutingModule,
+    FirebaseUIModule
   ],
   declarations: [MenuPage]
 })

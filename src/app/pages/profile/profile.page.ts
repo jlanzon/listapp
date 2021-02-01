@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';  
+import { Component, OnInit } from '@angular/core'; 
+import { AngularFireAuth} from "@angular/fire/auth"
+import firebase from 'firebase/app'; 
 
 @Component({
   selector: 'app-profile',
@@ -9,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class ProfilePage implements OnInit {
 
-  constructor() { }
+  constructor(public auth: AngularFireAuth) { }
 
    public numbers= [
     {
@@ -46,7 +48,12 @@ export class ProfilePage implements OnInit {
   increment() {
     this.numbers.unshift({ number : 1, row: 1});
   }
-
+  login() {
+    this.auth.signInWithPopup(new firebase.auth.EmailAuthProvider());
+  }
+  logout() {
+    this.auth.signOut();
+  }
 
 
 

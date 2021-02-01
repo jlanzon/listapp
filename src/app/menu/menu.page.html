@@ -16,18 +16,36 @@
       </ion-list>
     </ion-content>
 
-    <ion-footer class="bar-stable">
+    <ion-footer *ngIf="auth.user | async as user; else showLogin">
       <ion-toolbar>
         <ion-menu-toggle auto-hide="false">
           <ion-item horizontal="end" routerLink="/menu/profile/">
             <ion-icon name="person" routerLinkActive="active-item" slot="start"></ion-icon>
-            Profile
+            Hello {{ user.displayName }}
           </ion-item>
       </ion-menu-toggle>
       </ion-toolbar>
     </ion-footer>
+    <ng-template #showLogin>
+      <ion-toolbar>
+        <ion-menu-toggle auto-hide="false">
+          <ion-item horizontal="end" routerLink="/menu/login/">
+            <ion-icon name="person" routerLinkActive="active-item" slot="start"></ion-icon>
+            Login
+          </ion-item>
+      </ion-menu-toggle>
+      </ion-toolbar>
+    </ng-template>
 
   </ion-menu>
   <ion-router-outlet id="my-content" main></ion-router-outlet>
 
 </ion-split-pane>
+
+
+<!-- <ng-template #showLogin>
+  <ion-item horizontal="end" routerLink="/menu/login/">
+    <ion-icon name="person" routerLinkActive="active-item" slot="start"></ion-icon>
+    Login
+  </ion-item>
+</ng-template> -->
