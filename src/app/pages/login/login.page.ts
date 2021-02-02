@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/auth';
 import firebase from 'firebase/app';
 
 
@@ -16,7 +16,9 @@ export class LoginPage implements OnInit {
       this.auth.signInWithPopup(new firebase.auth.EmailAuthProvider());
     }
     logout() {
-      this.auth.signOut();
+      this.auth.signOut().then(() => {
+        location.reload();
+      });
     }
   ngOnInit() {
   }

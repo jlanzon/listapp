@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>todo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>Lists</ion-card-subtitle>
+      <ion-card-title></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <app-items></app-items>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>Lists</ion-card-subtitle>
+      <ion-card-title>Add a new item</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Title: </ion-label>
+        <ion-input id="title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Description: </ion-label>
+        <ion-input id="description"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Price: </ion-label>
+        <ion-input id="price" name="price" class="form-control"></ion-input>
+      </ion-item>
+      <ion-button expand="full" color="primary" slot="start" (click)="itemService.tTest()">Add to list</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" edge="false" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="light">
+        <ion-icon routerLink="/menu/gallery/" name="camera"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light">
+        <ion-icon routerLink="/menu/receipts-test/" name="list"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>

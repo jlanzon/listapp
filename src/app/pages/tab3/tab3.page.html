@@ -11,48 +11,22 @@
 
 <ion-content>
 
-  <ion-button (click)="increment()">+1</ion-button>
+  <ion-searchbar value="Receipts"></ion-searchbar>
 
-  <div>{{ lists }}</div>
 
-  <!-- <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
-    <ion-item [routerLink]="p.url" routerDirection="root" routerLinkActive="active-item">
-      {{p.title}}
-    </ion-item>
-  </ion-menu-toggle> -->
 
-  <!-- <ion-list>
-    <ion-item *ngFor="let r of receipts">
-      <ion-title> {{ r.title }}</ion-title>
-    </ion-item>
-  </ion-list> -->
-
-  <ion-list>
-    <ion-item-sliding lines="full" *ngFor="let receipt of receipts">
-      <ion-item>
-        <ion-label>{{ receipt.title }}</ion-label>
-      </ion-item>
-      <ion-item-options side="start">
-        <ion-item-option >Edit</ion-item-option>
-      </ion-item-options>
-      <ion-item-options side="end">
-        <ion-item-option color="danger">Delete</ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
-  </ion-list> 
-
-    <ion-fab vertical="bottom" horizontal="end" edge="false" slot="fixed">
-      <ion-fab-button>
-        <ion-icon name="add"></ion-icon>
+  <ion-fab vertical="bottom" horizontal="end" edge="false" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="light">
+        <ion-icon routerLink="/menu/gallery/" name="camera"></ion-icon>
       </ion-fab-button>
-      <ion-fab-list side="top">
-        <ion-fab-button color="light">
-          <ion-icon routerLink="/menu/camera" name="camera"></ion-icon>
-        </ion-fab-button>
-        <ion-fab-button color="light">
-          <ion-icon name="list"></ion-icon>
-        </ion-fab-button>
-      </ion-fab-list>
-    </ion-fab>
+      <ion-fab-button color="light">
+        <ion-icon routerLink="/menu/receipts-test/" name="list"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 
 </ion-content>

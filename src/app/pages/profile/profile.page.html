@@ -3,7 +3,8 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Profile [TEST]</ion-title>
+    <ion-title *ngIf="auth.user | async as user; else noUser" >Profile - {{ user.displayName }}</ion-title>
+    <ng-template #noUser>Logged Out</ng-template>
   </ion-toolbar>
 </ion-header>
 
@@ -23,7 +24,25 @@
     </ion-row>
   </ion-grid>
 
-  <ion-button (click)="login()">Login with your Email</ion-button>
-  <ion-button (click)="logout()">Log out</ion-button>
+  <section>
+    <ion-button expand="full" color="danger" slot="start" (click)="logout()" > logout</ion-button>
+  </section>
+  <section>
+    <ion-button expand="full" color="danger" slot="start" > Delete All Pictures</ion-button>
+  </section>
+
+  <ion-fab vertical="bottom" horizontal="end" edge="false" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="light">
+        <ion-icon routerLink="/menu/gallery/" name="camera"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light">
+        <ion-icon routerLink="/menu/receipts-test/" name="list"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 
 </ion-content>

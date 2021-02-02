@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-tab3',
@@ -6,32 +9,6 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
-
-  lists= 0;
-  receipts = [
-    {
-      title: "receipt",
-      description: "",
-      url: "/menu/home",
-      icon: ""
-    },
-    {
-      title: "receipt 2",
-      description: "",
-      url: "/menu/home",
-      icon: ""
-    },
-    {
-      title: "receipt 3",
-      description: "",
-      url: "/menu/home",
-      icon: ""
-    }
-  ];
-
-   increment() {
-     this.lists++;
-   }
 
   constructor() { }
 

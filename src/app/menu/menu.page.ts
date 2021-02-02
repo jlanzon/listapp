@@ -29,7 +29,13 @@ export class MenuPage {
       url: "/menu/receipts-test",
       icon: "code-working",
       vertical: "top"
-    }, 
+    },
+    {
+      title: "ToDo List",
+      url: "/menu/todo",
+      icon: "list",
+      vertical: "top"
+    },  
   ];
 
   selectedPath = "";
