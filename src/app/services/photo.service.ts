@@ -3,6 +3,14 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { Storage } from '@ionic/storage';
 
 
+
+class Photo {
+  description?: string;
+  id?: any;
+  imageRename?: any;
+  data?: any;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,12 +21,13 @@ export class PhotoService {
   constructor(private camera: Camera, private storage: Storage) { }
 
   takePicture() {
+    console.log("doing this thing now")
     const options: CameraOptions = {
       quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
-      saveToPhotoAlbum: true
+      saveToPhotoAlbum: false
     }
     
     this.camera.getPicture(options).then((imageData) => {
@@ -26,7 +35,8 @@ export class PhotoService {
       console.log("doing this now")
       this.photos.unshift({
         description: "somthing here. I would like to know how to edit this. how do i edit ionic storage once saved. pain in my ass ",
-        id: 1,
+        id: 1, 
+        imageRename: imageData,
         data: 'data:image/jpeg;base64,' + imageData,
       });
 
@@ -48,7 +58,7 @@ export class PhotoService {
     });
   }
 
-  removePic(id: number)  {
+  removePic(id: any)  {
     console.log(this.photos[id])
     // this.photos = this.photos.filter( photos => photos.id != id)
   }
@@ -57,10 +67,4 @@ export class PhotoService {
     this.storage.remove("photos")
   }
 
-}
-
-class Photo {
-  description: any;
-  id: any;
-  data: any;
 }

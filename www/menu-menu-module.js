@@ -169,6 +169,15 @@ var routes = [
                 ]
             },
             {
+                path: "dev",
+                children: [
+                    {
+                        path: '',
+                        loadChildren: '../pages/dev/dev.module#DevPageModule'
+                    },
+                ]
+            },
+            {
                 path: '',
                 redirectTo: '/menu/home',
                 pathMatch: 'full'
@@ -253,6 +262,12 @@ var MenuPage = /** @class */ (function () {
                 title: "Receipts-test",
                 url: "/menu/receipts-test",
                 icon: "code-working",
+                vertical: "top"
+            },
+            {
+                title: "Dev Environment ",
+                url: "/menu/dev",
+                icon: "code",
                 vertical: "top"
             },
         ];

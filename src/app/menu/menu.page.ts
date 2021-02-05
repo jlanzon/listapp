@@ -31,12 +31,6 @@ export class MenuPage {
       vertical: "top"
     },
     {
-      title: "ToDo List",
-      url: "/menu/todo",
-      icon: "list",
-      vertical: "top"
-    },
-    {
       title: "Dev Environment ",
       url: "/menu/dev",
       icon: "code",

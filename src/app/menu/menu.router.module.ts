@@ -72,15 +72,6 @@ const routes: Routes = [
         ]      
       },
       {
-        path: "todo",
-        children: [
-          {
-            path: '',
-            loadChildren: '../pages/todo/todo.module#TodoPageModule'
-          },
-        ]      
-      },
-      {
         path: "dev",
         children: [
           {
