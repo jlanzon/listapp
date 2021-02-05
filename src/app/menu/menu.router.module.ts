@@ -81,6 +81,15 @@ const routes: Routes = [
         ]      
       },
       {
+        path: "dev",
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/dev/dev.module#DevPageModule'
+          },
+        ]      
+      },
+      {
         path: '',
         redirectTo: '/menu/home',
         pathMatch: 'full'

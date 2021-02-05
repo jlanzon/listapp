@@ -3,33 +3,20 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title *ngIf="auth.user | async as user; else noUser" >Profile - {{ user.displayName }}</ion-title>
+    <ion-title *ngIf="auth.user | async as user; else noUser" >Name: {{ user.displayName }}</ion-title>
     <ng-template #noUser>Logged Out</ng-template>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-  <ion-button (click)="increment()">+1</ion-button>
-
-
-  <ion-grid>
-    <ion-row *ngFor="let n of numbers">
-      <ion-col>
-        {{ n.number }}
-      </ion-col>
-      <ion-col>
-        {{ n.row }}
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
   <section>
-    <ion-button expand="full" color="danger" slot="start" (click)="logout()" > logout</ion-button>
+    <ion-button expand="full" color="danger" slot="start" (click)="auth.signOut()" > logout</ion-button>
   </section>
   <section>
     <ion-button expand="full" color="danger" slot="start" > Delete All Pictures</ion-button>
   </section>
+
+<!-- fab -->
 
   <ion-fab vertical="bottom" horizontal="end" edge="false" slot="fixed">
     <ion-fab-button>

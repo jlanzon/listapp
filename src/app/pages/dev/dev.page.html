@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <!--MENU-->
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>dev</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- <ul>
+    <li *ngFor="let i of devitem | async">
+      {{ i.title }} is {{ i.cost }} with the id of {{i.id}}
+      <ion-button (click)="deleteItem(i)">Delete</ion-button>
+    </li>
+  </ul> -->
+
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>Dev Item List</ion-card-subtitle>
+      <ion-card-title></ion-card-title>
+    </ion-card-header>
+      <ion-item-sliding *ngFor="let i of devitem | async">
+        <ion-item>
+          <ion-label>{{i.title}}</ion-label>
+          <ion-note slot="end" color="primary">£{{i.cost}}</ion-note>
+        </ion-item>
+        <ion-item-options side="start">
+          <ion-item-option color="secondary">Edit Item</ion-item-option>
+        </ion-item-options>
+          <ion-item-options side="end">
+            <ion-item-option color="danger" (click)="deleteItem(i)">Delete</ion-item-option>
+          </ion-item-options>
+      </ion-item-sliding>
+  </ion-card>
+
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>Items</ion-card-subtitle>
+      <ion-card-title>Add a new item</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Title: </ion-label>
+        <ion-input required minlength="2" ngModel name="title" #title="ngModel" id="title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Price: </ion-label>
+        <ion-input required ngModel type="number" name="cost" #cost="ngModel" id="cost"></ion-input>
+      </ion-item>
+      <ion-button expand="full" color="primary" slot="start" (click)="createItem(title.value, cost.value)">Add to list</ion-button>
+    </ion-card-content>
+</ion-card>
+
+<!-- Fab -->
+
+<ion-fab vertical="bottom" horizontal="end" edge="false" slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button color="light">
+      <ion-icon routerLink="/menu/gallery/" name="camera"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button color="light">
+      <ion-icon routerLink="/menu/receipts-test/" name="list"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>
+
+</ion-content>

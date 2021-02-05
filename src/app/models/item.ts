@@ -1,6 +1,7 @@
 export interface Item {
-    id?:string;
+    id?:any;
     title?:string;
     description?:string;
+    cost?:number;
   }
   

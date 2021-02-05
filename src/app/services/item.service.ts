@@ -11,6 +11,7 @@ export class ItemService {
   itemsCollection: AngularFirestoreCollection<Item>;
   items:Observable<Item[]>
 
+testData: [];
 
   constructor(public afs: AngularFirestore) { 
     this.items = this.afs.collection("items").valueChanges();
@@ -20,8 +21,9 @@ export class ItemService {
     return this.items;
   }
 
-  tTest(){
-    console.log("Test");
+  pushItems(){
+
   }
+
 }
 

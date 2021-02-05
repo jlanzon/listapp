@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core'; 
+import { Component, Input, OnInit } from '@angular/core'; 
 import { AngularFireAuth} from "@angular/fire/auth"
+import { Router } from '@angular/router';
 import firebase from 'firebase/app'; 
 
 @Component({
@@ -11,43 +12,11 @@ import firebase from 'firebase/app';
 
 export class ProfilePage implements OnInit {
 
+  @Input()
+  user;
+
   constructor(public auth: AngularFireAuth) { }
 
-   public numbers= [
-    {
-      number: 1,
-      row: 1
-    },
-    {
-      number: 2,
-      row: 2
-    },
-    {
-      number: 3,
-      row: 3
-    },
-    {
-      number: 4,
-      row: 1
-    },
-    {
-      number: 5,
-      row: 2
-    },
-    {
-      number: 6,
-      row: 3
-    },
-    {
-      number: 7,
-      row: 1
-    }
-  ];
-
-
-  increment() {
-    this.numbers.unshift({ number : 1, row: 1});
-  }
   login() {
     this.auth.signInWithPopup(new firebase.auth.EmailAuthProvider());
   }

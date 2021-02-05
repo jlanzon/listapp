@@ -35,7 +35,13 @@ export class MenuPage {
       url: "/menu/todo",
       icon: "list",
       vertical: "top"
-    },  
+    },
+    {
+      title: "Dev Environment ",
+      url: "/menu/dev",
+      icon: "code",
+      vertical: "top"
+    },    
   ];
 
   selectedPath = "";
