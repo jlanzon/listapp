@@ -780,10 +780,12 @@ var map = {
 	],
 	"../pages/tab2/tab2.module": [
 		"HJ/b",
+		"default~pages-tab2-tab2-module~pages-tab3-tab3-module",
 		"pages-tab2-tab2-module"
 	],
 	"../pages/tab3/tab3.module": [
 		"XgaQ",
+		"default~pages-tab2-tab2-module~pages-tab3-tab3-module",
 		"pages-tab3-tab3-module"
 	],
 	"../pages/terms/terms.module": [
@@ -805,7 +807,7 @@ function webpackAsyncContext(req) {
 	}
 
 	var ids = map[req], id = ids[0];
-	return __webpack_require__.e(ids[1]).then(function() {
+	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(function() {
 		return __webpack_require__(id);
 	});
 }

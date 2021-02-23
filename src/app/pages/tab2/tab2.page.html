@@ -19,11 +19,13 @@
     <ion-card-content>
       {{photo.description}}
     </ion-card-content>
-    <!-- <ion-button (click)="photoService.removePic(photo.id)"> Delete picture</ion-button> -->
+    <ion-button (click)="photoService.removePic(photo.id)"> Delete picture</ion-button>
   </ion-card>
 
   <section>
     <ion-button expand="full" color="danger" slot="start" (click)="photoService.removeAllKey()" > Delete All Pictures</ion-button>
+    <ion-button expand="full" color="success" slot="start" (click)="photoService.test()" > Console Log</ion-button>
+    <ion-button expand="full" color="success" slot="start" (click)="photoService.startUpload()" >Upload</ion-button>
   </section>
   
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">

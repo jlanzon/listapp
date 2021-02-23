@@ -4,15 +4,88 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Receipts
+      Photo Dev 3
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <ion-searchbar value="Receipts"></ion-searchbar>
+  <!-- Photo Section -->
+  <!-- End -->
 
+
+  <!-- List Section -->
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>Dev Item List</ion-card-subtitle>
+      <ion-card-title></ion-card-title>
+    </ion-card-header>
+    <span *ngFor="let i of devpic | async">
+      <ion-item-sliding>
+        <ion-item>
+          <ion-label>{{i.title}}</ion-label>
+          <ion-note slot="end" color="primary">£{{i.cost}}</ion-note>
+        </ion-item>
+        <ion-item-options side="start">
+          <ion-item-option color="secondary" (click)="editItem(i)">Edit Item</ion-item-option>
+        </ion-item-options>
+          <ion-item-options side="end">
+            <ion-item-option color="danger" (click)="deleteItem(i)">Delete</ion-item-option>
+          </ion-item-options>
+      </ion-item-sliding>
+      <!--Edit items-->
+      <ion-card class="welcome-card" *ngIf="editState && itemToEdit.id == i.id">
+        <ion-toolbar>
+          <!--MENU-->
+          <ion-buttons slot="end">
+            <ion-button size="small" shape="round" fill="outline" (click)="clearState(i)">
+              <ion-icon name="close"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+          <ion-title>EDIT ITEM</ion-title>
+        </ion-toolbar>
+        <ion-card-content>
+          <ion-item>
+            <ion-label>Title: </ion-label>
+            <ion-input ngModel [placeholder]="itemToEdit.title" #updatedtitle="ngModel"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Price: </ion-label>
+            <ion-input ngModel [placeholder]="itemToEdit.cost" #updatedcost="ngModel"></ion-input>
+          </ion-item>
+          <ion-button expand="full" color="primary" (click)="updateItem(i, updatedtitle.value, updatedcost.value)">Update Item</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </span>
+  </ion-card>
+
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>Items</ion-card-subtitle>
+      <ion-card-title>Add a new item</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Title: </ion-label>
+        <ion-input required minlength="2" ngModel name="title" #title="ngModel" id="title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Price: </ion-label>
+        <ion-input required ngModel type="number" name="cost" #cost="ngModel" id="cost"></ion-input>
+      </ion-item>
+      <ion-button expand="full" color="primary" slot="start" (click)="createItem(title.value, cost.value)">Add to list</ion-button>
+    </ion-card-content>
+  </ion-card> 
+<!-- End -->
+
+<!-- Ionic Fab take a photo -->
+<ion-fab vertical="bottom" horizontal="center" slot="fixed">
+  <ion-fab-button (click)="takePicture()">
+    <ion-icon name="camera"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+<!-- end -->
 
 
   <ion-fab vertical="bottom" horizontal="end" edge="false" slot="fixed">
