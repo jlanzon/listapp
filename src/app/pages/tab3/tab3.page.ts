@@ -42,10 +42,10 @@ export class Tab3Page {
 
   constructor(private camera: Camera, public storage: Storage, private afs: AngularFirestore, private storageafs: AngularFireStorage,) {
     
-    this.itemCollection = afs.collection<DevPic>("devpic");
+    this.itemCollection = afs.collection<DevPic>("newcollection");
     this.item = this.itemCollection.valueChanges();
     this.devpic = this.afs
-    .collection("devpic").snapshotChanges()                  
+    .collection("newcollection").snapshotChanges()                  
     .pipe(map(actions => actions.map( a => { 
       const data = a.payload.doc.data()as DevPic; 
       const id = a.payload.doc.id;  

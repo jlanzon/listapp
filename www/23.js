@@ -12,10 +12,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_col", function() { return Col; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_grid", function() { return Grid; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_row", function() { return Row; });
-/* harmony import */ var D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/defineProperty */ "rePB");
-/* harmony import */ var D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createForOfIteratorHelper */ "uFwe");
-/* harmony import */ var D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck */ "1OyB");
-/* harmony import */ var D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass */ "vuIU");
+/* harmony import */ var D_Coding_listapp_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/defineProperty */ "rePB");
+/* harmony import */ var D_Coding_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createForOfIteratorHelper */ "uFwe");
+/* harmony import */ var D_Coding_listapp_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck */ "1OyB");
+/* harmony import */ var D_Coding_listapp_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass */ "vuIU");
 /* harmony import */ var _core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./core-feeeff0d.js */ "c1op");
 /* harmony import */ var _config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./config-3c7f3790.js */ "AfW+");
 
@@ -53,12 +53,12 @@ var BREAKPOINTS = ['', 'xs', 'sm', 'md', 'lg', 'xl'];
 
 var Col = /*#__PURE__*/function () {
   function Col(hostRef) {
-    Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Col);
+    Object(D_Coding_listapp_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Col);
 
     Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_4__["r"])(this, hostRef);
   }
 
-  Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(Col, [{
+  Object(D_Coding_listapp_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(Col, [{
     key: "onResize",
     value: function onResize() {
       this.el.forceUpdate();
@@ -70,7 +70,7 @@ var Col = /*#__PURE__*/function () {
     value: function getColumns(property) {
       var matched;
 
-      var _iterator = Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_1__["default"])(BREAKPOINTS),
+      var _iterator = Object(D_Coding_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_1__["default"])(BREAKPOINTS),
           _step;
 
       try {
@@ -134,7 +134,7 @@ var Col = /*#__PURE__*/function () {
       ? "calc(calc(".concat(columns, " / var(--ion-grid-columns, 12)) * 100%)") // Convert the columns to a percentage by dividing by the total number
       // of columns (12) and then multiplying by 100
       : columns > 0 && columns < 12 ? columns / 12 * 100 + '%' : 'auto';
-      return Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({}, modifier, amount);
+      return Object(D_Coding_listapp_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({}, modifier, amount);
     }
   }, {
     key: "calculateOffset",
@@ -157,7 +157,7 @@ var Col = /*#__PURE__*/function () {
       var isRTL = document.dir === 'rtl';
       var mode = Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_4__["c"])(this);
       return Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_4__["h"])(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_4__["H"], {
-        class: Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({}, mode, true),
+        class: Object(D_Coding_listapp_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({}, mode, true),
         style: Object.assign(Object.assign(Object.assign(Object.assign({}, this.calculateOffset(isRTL)), this.calculatePull(isRTL)), this.calculatePush(isRTL)), this.calculateSize())
       }, Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_4__["h"])("slot", null));
     }
@@ -178,7 +178,7 @@ var Col = /*#__PURE__*/function () {
 
 var Grid = /*#__PURE__*/function () {
   function Grid(hostRef) {
-    Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Grid);
+    Object(D_Coding_listapp_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Grid);
 
     Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_4__["r"])(this, hostRef);
     /**
@@ -188,14 +188,14 @@ var Grid = /*#__PURE__*/function () {
     this.fixed = false;
   }
 
-  Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(Grid, [{
+  Object(D_Coding_listapp_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(Grid, [{
     key: "render",
     value: function render() {
       var _class2;
 
       var mode = Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_4__["c"])(this);
       return Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_4__["h"])(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_4__["H"], {
-        class: (_class2 = {}, Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class2, mode, true), Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class2, 'grid-fixed', this.fixed), _class2)
+        class: (_class2 = {}, Object(D_Coding_listapp_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class2, mode, true), Object(D_Coding_listapp_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class2, 'grid-fixed', this.fixed), _class2)
       }, Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_4__["h"])("slot", null));
     }
   }], [{
@@ -210,12 +210,12 @@ var Grid = /*#__PURE__*/function () {
 
 var Row = /*#__PURE__*/function () {
   function Row(hostRef) {
-    Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Row);
+    Object(D_Coding_listapp_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Row);
 
     Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_4__["r"])(this, hostRef);
   }
 
-  Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(Row, [{
+  Object(D_Coding_listapp_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(Row, [{
     key: "render",
     value: function render() {
       return Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_4__["h"])(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_4__["H"], {
