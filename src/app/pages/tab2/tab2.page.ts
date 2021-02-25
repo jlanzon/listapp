@@ -13,6 +13,6 @@ export class Tab2Page {
   constructor(public photoService: PhotoService, public storage: Storage) {  }
 
   ngOnInit() {
-    this.photoService.loadSaved();
+    
   }
 }

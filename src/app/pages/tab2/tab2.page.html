@@ -10,23 +10,45 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let photo of photoService.photos; let i of index">
-    <img [src]="photo.data" />
+  <ion-button expand="block"(click)="photoService.updateCost()" color="danger"> TEST</ion-button>
+  <ion-card *ngFor="let photo of photoService.receipts | async">
+    <img [src]="photo.downloadURL"/>
     <ion-card-header>
       <ion-card-subtitle>Picture</ion-card-subtitle>
-      <ion-card-title>{{ photo.id }}</ion-card-title>
+      <ion-card-title>{{ photo.title }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       {{photo.description}}
+      <div>
+        £{{photo.cost}}
+      </div>
     </ion-card-content>
-    <ion-button (click)="photoService.removePic(photo.id)"> Delete picture</ion-button>
+    <ion-card class="welcome-card" *ngIf="photoService.editState && photoService.itemToEdit.id == photo.id">
+      <ion-toolbar>
+        <!--MENU-->
+        <ion-buttons slot="end">
+          <ion-button size="small" shape="round" fill="outline" (click)="photoService.clearState(photo)">
+            <ion-icon name="close"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-title>EDIT ITEM</ion-title>
+      </ion-toolbar>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>Title: </ion-label>
+          <ion-input ngModel [placeholder]="photoService.itemToEdit.title" #updatedtitle="ngModel"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Price: </ion-label>
+          <ion-input ngModel type="number" [placeholder]="photoService.itemToEdit.cost" #updatedcost="ngModel"></ion-input>
+        </ion-item>
+        <ion-button expand="full" color="primary" (click)="photoService.updateItem(photo, updatedtitle.value, updatedcost.value)">Update Item</ion-button>
+      </ion-card-content>
+    </ion-card>
+    <ion-button expand="block" (click)="photoService.editItem(photo)" color="secondary"> Edit Item</ion-button>
+    <ion-button expand="block"(click)="photoService.removePic(photo)" color="danger"> Delete picture</ion-button>
   </ion-card>
-
-  <section>
-    <ion-button expand="full" color="danger" slot="start" (click)="photoService.removeAllKey()" > Delete All Pictures</ion-button>
-    <ion-button expand="full" color="success" slot="start" (click)="photoService.test()" > Console Log</ion-button>
-    <ion-button expand="full" color="success" slot="start" (click)="photoService.startUpload()" >Upload</ion-button>
-  </section>
+  
   
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
       <ion-fab-button (click)="photoService.takePicture()">

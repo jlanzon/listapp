@@ -1,4 +1,4 @@
-node_modules
+node_modules 
 www
 .tmp
 .sass-cache
@@ -12,3 +12,6 @@ plugins
 android
 electron
 *.vscode
+.www
+WWW
+www/**
