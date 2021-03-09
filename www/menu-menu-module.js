@@ -253,7 +253,7 @@ var MenuPage = /** @class */ (function () {
                 vertical: "top"
             },
             {
-                title: "Gallery",
+                title: "Receipts",
                 url: "/menu/gallery",
                 icon: "images",
                 vertical: "top"

@@ -6,6 +6,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { Storage } from '@ionic/storage';
 import { Observable } from 'rxjs';
 import { finalize, map, tap } from 'rxjs/operators';
+import { pathToFileURL } from 'url';
 
 
 
@@ -19,6 +20,7 @@ class Photo {
 export interface Receipt { title?: string, cost?: number, id?:string, description?: string, picture?: string,created?: number, updated?: number, downloadURL?: any, path?: string}
 export interface ReceiptID extends Receipt { id: string;}
 export interface Price { totalCost?: number, cost?: number }
+export interface PriceCap { totalCost: number, count: number, cost: number}
 
 @Injectable({
   providedIn: 'root'
@@ -35,9 +37,11 @@ export class PhotoService {
   itemCollection: AngularFirestoreCollection<Receipt>;
   priceCollection: AngularFirestoreCollection<Price>;
   receipts: Observable<ReceiptID[]>;
+  countCost: Observable<any[]>
   priceCrap: Observable<any[]>;
   item: Observable<Receipt[]>;
   costCal: number[] = []
+  
 
   //edit items
   editState: boolean = false
@@ -48,6 +52,7 @@ export class PhotoService {
 
     this.itemCollection = db.collection<Receipt>("Receipts", ref => ref.orderBy("created", "desc"));
     this.priceCollection = db.collection<Price>("RunningCost");
+    this.countCost = this.priceCollection.valueChanges()
     // this.item = this.itemCollection.valueChanges();
     this.receipts = this.itemCollection.snapshotChanges()                  
     .pipe(map(actions => actions.map( a => {  
@@ -93,18 +98,23 @@ export class PhotoService {
       //main task
       const task = ref.putString(pictureLoad, `data_url`).then((snapshot) => {
         console.log('Uploaded a data_url string!');
-        var progress = (snapshot.bytesTransferred / snapshot.totalBytes)
+        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) *100
         console.log("Upload is", progress, "% done.")
         snapshot.ref.getDownloadURL().then((downloadURL)=> {
           console.log("File Download link:", downloadURL)
-          this.itemCollection.add({downloadURL: downloadURL, created: Date.now(), cost: 0, description: "Description not found"})
+          this.itemCollection.add({downloadURL: downloadURL, created: Date.now(), cost: 0, description: "Description not found", path: path})
           this.storage.remove("photos")
+          this.percentage = this.task.percentageChanges();
         })
       });
     console.log(this.photos[0].id, "Uploading this image")
     }, (err) => {
      console.log("Camera issue: " + err);
     });
+  }
+
+  isActive(snapshot) {
+    return snapshot.state === 'running' && snapshot.bytesTransferred < snapshot.totalBytes;
   }
 
 
@@ -117,13 +127,23 @@ export class PhotoService {
 
   removePic(photo)  {
     console.log("working on it", photo)
-    return this.itemCollection.doc(photo.id).delete()
+    this.itemCollection.doc(photo.id).delete()
+    const photoDelete = this.afs.storage.ref(photo.path)
+    console.log(photo.path)
+    photoDelete.delete().then(() =>{
+      console.log("File Deleted")
+    }).catch((error) => {
+      console.log(error)
+    })
   }
 
   editItem(i){
     console.log("Working on editing", i)
     this.editState = true;
     this.itemToEdit = i;
+  }
+  downloadPic(){
+    
   }
 
   removeAllKey(){

@@ -19,7 +19,7 @@ export class MenuPage {
       vertical: "top"
     },
     {
-      title: "Gallery",
+      title: "Receipts",
       url: "/menu/gallery",
       icon: "images",
       vertical: "top"

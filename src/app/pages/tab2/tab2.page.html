@@ -10,7 +10,18 @@
 </ion-header>
 
 <ion-content>
-  <ion-button expand="block"(click)="photoService.updateCost()" color="danger"> TEST</ion-button>
+<!-- Total price here -->
+<ion-card *ngFor="let cost of photoService.countCost | async">
+  <ion-card-header>
+    <ion-card-title>Total:  {{cost.totalCost}}</ion-card-title>
+    <ion-card-subtitle>Receipt Count: {{ cost.count }}</ion-card-subtitle>
+  </ion-card-header>
+</ion-card>
+<ion-card *ngIf="photoService.percentage | async as pct">
+  <ion-card-title class="ion-text-center">- Uploading image -</ion-card-title>
+  <ion-progress-bar [value]="pct"></ion-progress-bar>
+</ion-card>
+<!-- END -->
   <ion-card *ngFor="let photo of photoService.receipts | async">
     <img [src]="photo.downloadURL"/>
     <ion-card-header>
@@ -30,6 +41,9 @@
           <ion-button size="small" shape="round" fill="outline" (click)="photoService.clearState(photo)">
             <ion-icon name="close"></ion-icon>
           </ion-button>
+          <ion-button size="small" shape="round" fill="outline" [href]="photo.downloadURL" download>
+            <ion-icon name="download"></ion-icon>
+          </ion-button>
         </ion-buttons>
         <ion-title>EDIT ITEM</ion-title>
       </ion-toolbar>
@@ -40,13 +54,13 @@
         </ion-item>
         <ion-item>
           <ion-label>Price: </ion-label>
-          <ion-input ngModel type="number" [placeholder]="photoService.itemToEdit.cost" #updatedcost="ngModel"></ion-input>
+          <ion-input ngModel type="number"  [placeholder]="photoService.itemToEdit.cost" #updatedcost="ngModel"></ion-input>
         </ion-item>
         <ion-button expand="full" color="primary" (click)="photoService.updateItem(photo, updatedtitle.value, updatedcost.value)">Update Item</ion-button>
+        <ion-button expand="block"(click)="photoService.removePic(photo)" color="danger"> Delete picture</ion-button>
       </ion-card-content>
     </ion-card>
     <ion-button expand="block" (click)="photoService.editItem(photo)" color="secondary"> Edit Item</ion-button>
-    <ion-button expand="block"(click)="photoService.removePic(photo)" color="danger"> Delete picture</ion-button>
   </ion-card>
   
   

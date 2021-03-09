@@ -1,1 +1,2 @@
-export {costCount} from './total';
+
+export {costCountDelete, costCount, costCountupdate} from './totalD';
