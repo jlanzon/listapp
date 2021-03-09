@@ -26,6 +26,7 @@
     <img [src]="photo.downloadURL"/>
     <ion-card-header>
       <ion-card-subtitle>Picture</ion-card-subtitle>
+      <ion-card-subtitle>{{ photo.created }}</ion-card-subtitle>
       <ion-card-title>{{ photo.title }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
@@ -53,10 +54,14 @@
           <ion-input ngModel [placeholder]="photoService.itemToEdit.title" #updatedtitle="ngModel"></ion-input>
         </ion-item>
         <ion-item>
+          <ion-label>description: </ion-label>
+          <ion-input ngModel type="any"  [placeholder]="photoService.itemToEdit.description" #updateddescription="ngModel"></ion-input>
+        </ion-item>
+        <ion-item>
           <ion-label>Price: </ion-label>
           <ion-input ngModel type="number"  [placeholder]="photoService.itemToEdit.cost" #updatedcost="ngModel"></ion-input>
         </ion-item>
-        <ion-button expand="full" color="primary" (click)="photoService.updateItem(photo, updatedtitle.value, updatedcost.value)">Update Item</ion-button>
+        <ion-button expand="full" color="primary" (click)="photoService.updateItem(photo, updatedtitle.value, updateddescription.value, updatedcost.value)">Update Item</ion-button>
         <ion-button expand="block"(click)="photoService.removePic(photo)" color="danger"> Delete picture</ion-button>
       </ion-card-content>
     </ion-card>

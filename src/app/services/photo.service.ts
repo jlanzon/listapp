@@ -17,7 +17,7 @@ class Photo {
   imageData?: any;
   uriTest?: any;
 }
-export interface Receipt { title?: string, cost?: number, id?:string, description?: string, picture?: string,created?: number, updated?: number, downloadURL?: any, path?: string}
+export interface Receipt { title?: string, cost?: number, id?:string, description?: string, picture?: string,created?: string, updated?: string, downloadURL?: any, path?: string}
 export interface ReceiptID extends Receipt { id: string;}
 export interface Price { totalCost?: number, cost?: number }
 export interface PriceCap { totalCost: number, count: number, cost: number}
@@ -97,14 +97,15 @@ export class PhotoService {
       var pictureLoad = this.photos[0].data
       //main task
       const task = ref.putString(pictureLoad, `data_url`).then((snapshot) => {
+        console.log("Upload is", progress, "% done.")
         console.log('Uploaded a data_url string!');
         var progress = (snapshot.bytesTransferred / snapshot.totalBytes) *100
         console.log("Upload is", progress, "% done.")
+        // this.percentage = this.task.percentageChanges();
         snapshot.ref.getDownloadURL().then((downloadURL)=> {
           console.log("File Download link:", downloadURL)
-          this.itemCollection.add({downloadURL: downloadURL, created: Date.now(), cost: 0, description: "Description not found", path: path})
+          this.itemCollection.add({downloadURL: downloadURL, created: Date(), cost: 0, description: "Description not found", path: path})
           this.storage.remove("photos")
-          this.percentage = this.task.percentageChanges();
         })
       });
     console.log(this.photos[0].id, "Uploading this image")
@@ -162,9 +163,9 @@ export class PhotoService {
     console.log("closed", photo)
   }
 
-  updateItem(i: Receipt, updatedtitle, updatedCost: number ){
+  updateItem(i: Receipt, updatedtitle,updateddescription , updatedCost: number ){
     this.clearState(i)
-    const updatedItem = {title: updatedtitle, cost: updatedCost, updated: Date.now()};
+    const updatedItem = {title: updatedtitle,description: updateddescription, cost: updatedCost, updated: Date()};
     return this.itemCollection.doc(i.id).update(updatedItem);
   }
 
