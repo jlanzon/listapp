@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Coding\App envi\listapp\src\main.ts */"zUnb");
+module.exports = __webpack_require__(/*! C:\Users\Lenovo\Desktop\Coding\listapp\src\main.ts */"zUnb");
 
 
 /***/ }),
@@ -89,7 +89,7 @@ var AppComponent = /** @class */ (function () {
     AppComponent.prototype.initializeApp = function () {
         var _this = this;
         this.platform.ready().then(function () {
-            _this.statusBar.styleDefault();
+            _this.statusBar.styleLightContent();
             _this.splashScreen.hide();
         });
     };

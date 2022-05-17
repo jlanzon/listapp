@@ -10,7 +10,8 @@ import { Storage } from '@ionic/storage';
 export class Tab2Page {
   currentImage: any;
 
-  constructor(public photoService: PhotoService, public storage: Storage) {  }
+  constructor(public photoService: PhotoService, public storage: Storage) { 
+   }
 
   ngOnInit() {
     

@@ -19,15 +19,15 @@ export class MenuPage {
       vertical: "top"
     },
     {
-      title: "Receipts",
+      title: "Poland trip",
       url: "/menu/gallery",
-      icon: "images",
+      icon: "receipt",
       vertical: "top"
     },
     {
-      title: "Receipts-test",
+      title: "Poland Trip Minimised",
       url: "/menu/receipts-test",
-      icon: "code-working",
+      icon: "receipt",
       vertical: "top"
     },
     {

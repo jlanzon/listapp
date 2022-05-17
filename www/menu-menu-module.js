@@ -61,7 +61,7 @@ var MenuPageModule = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-split-pane contentId=\"my-content\">\r\n  <ion-menu contentId=\"my-content\" content=\"menu\" class=\"menu_main\" side=\"start\">\r\n    <ion-header>\r\n      <ion-toolbar color=\"primary\">\r\n        <ion-title>Start Menu</ion-title>\r\n      </ion-toolbar>\r\n    </ion-header>\r\n    <ion-content>\r\n      <ion-list>\r\n        <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of pages\">\r\n          <ion-item [routerLink]=\"p.url\" routerDirection=\"root\">\r\n            <ion-icon [name]=\"p.icon\" routerLinkActive=\"active-item\" slot=\"start\"></ion-icon>\r\n            {{p.title}}\r\n          </ion-item>\r\n        </ion-menu-toggle>\r\n      </ion-list>\r\n    </ion-content>\r\n\r\n    <ion-footer *ngIf=\"auth.user | async as user; else showLogin\">\r\n      <ion-toolbar>\r\n        <ion-menu-toggle auto-hide=\"false\">\r\n          <ion-item horizontal=\"end\" routerLink=\"/menu/profile/\">\r\n            <ion-icon name=\"person\" routerLinkActive=\"active-item\" slot=\"start\"></ion-icon>\r\n            Hello {{ user.displayName }}\r\n          </ion-item>\r\n      </ion-menu-toggle>\r\n      </ion-toolbar>\r\n    </ion-footer>\r\n    <ng-template #showLogin>\r\n      <ion-toolbar>\r\n        <ion-menu-toggle auto-hide=\"false\">\r\n          <ion-item horizontal=\"end\" routerLink=\"/menu/login/\">\r\n            <ion-icon name=\"person\" routerLinkActive=\"active-item\" slot=\"start\"></ion-icon>\r\n            Login\r\n          </ion-item>\r\n      </ion-menu-toggle>\r\n      </ion-toolbar>\r\n    </ng-template>\r\n\r\n  </ion-menu>\r\n  <ion-router-outlet id=\"my-content\" main></ion-router-outlet>\r\n\r\n</ion-split-pane>\r\n\r\n\r\n<!-- <ng-template #showLogin>\r\n  <ion-item horizontal=\"end\" routerLink=\"/menu/login/\">\r\n    <ion-icon name=\"person\" routerLinkActive=\"active-item\" slot=\"start\"></ion-icon>\r\n    Login\r\n  </ion-item>\r\n</ng-template> -->");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-split-pane contentId=\"my-content\">\r\n  <ion-menu contentId=\"my-content\" content=\"menu\" class=\"menu_main\" side=\"start\">\r\n    <ion-header>\r\n      <ion-toolbar color=\"primary\">\r\n        <ion-title>Expenses Menu</ion-title>\r\n      </ion-toolbar>\r\n    </ion-header>\r\n    <ion-content>\r\n      <ion-list>\r\n        <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of pages\">\r\n          <ion-item [routerLink]=\"p.url\" routerDirection=\"root\">\r\n            <ion-icon [name]=\"p.icon\" routerLinkActive=\"active-item\" slot=\"start\"></ion-icon>\r\n            {{p.title}}\r\n          </ion-item>\r\n        </ion-menu-toggle>\r\n      </ion-list>\r\n    </ion-content>\r\n\r\n    <ion-footer *ngIf=\"auth.user | async as user; else showLogin\">\r\n      <ion-toolbar>\r\n        <ion-menu-toggle auto-hide=\"false\">\r\n          <ion-item horizontal=\"end\" routerLink=\"/menu/profile/\">\r\n            <ion-icon name=\"person\" routerLinkActive=\"active-item\" slot=\"start\"></ion-icon>\r\n            Hello {{ user.displayName }}\r\n          </ion-item>\r\n      </ion-menu-toggle>\r\n      </ion-toolbar>\r\n    </ion-footer>\r\n    <ng-template #showLogin>\r\n      <ion-toolbar>\r\n        <ion-menu-toggle auto-hide=\"false\">\r\n          <ion-item horizontal=\"end\" routerLink=\"/menu/login/\">\r\n            <ion-icon name=\"person\" routerLinkActive=\"active-item\" slot=\"start\"></ion-icon>\r\n            Login\r\n          </ion-item>\r\n      </ion-menu-toggle>\r\n      </ion-toolbar>\r\n    </ng-template>\r\n\r\n  </ion-menu>\r\n  <ion-router-outlet id=\"my-content\" main></ion-router-outlet>\r\n\r\n</ion-split-pane>\r\n\r\n\r\n<!-- <ng-template #showLogin>\r\n  <ion-item horizontal=\"end\" routerLink=\"/menu/login/\">\r\n    <ion-icon name=\"person\" routerLinkActive=\"active-item\" slot=\"start\"></ion-icon>\r\n    Login\r\n  </ion-item>\r\n</ng-template> -->");
 
 /***/ }),
 
@@ -74,7 +74,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".active-item {\n  color: var(--ion-color-primary);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXG1lbnUucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0ksK0JBQUE7QUFBSiIsImZpbGUiOiJtZW51LnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG4uYWN0aXZlLWl0ZW0ge1xyXG4gICAgY29sb3I6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KTtcclxufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".backgroundHeader {\n  background: #0900aa;\n  background: linear-gradient(90deg, #0900aa 0%, #001fd6 40%, #00e4ff 100%);\n}\n\n.active-item {\n  color: var(--ion-color-primary);\n}\n\n.test {\n  background-color: green;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXG1lbnUucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksbUJBQUE7RUFDSix5RUFBQTtBQUNBOztBQUVBO0VBQ0ksK0JBQUE7QUFDSjs7QUFFQTtFQUNJLHVCQUFBO0FBQ0oiLCJmaWxlIjoibWVudS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYmFja2dyb3VuZEhlYWRlcntcclxuICAgIGJhY2tncm91bmQ6IHJnYig5LDAsMTcwKTtcclxuYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDkwZGVnLCByZ2JhKDksMCwxNzAsMSkgMCUsIHJnYmEoMCwzMSwyMTQsMSkgNDAlLCByZ2JhKDAsMjI4LDI1NSwxKSAxMDAlKTtcclxufVxyXG5cclxuLmFjdGl2ZS1pdGVtIHtcclxuICAgIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XHJcbn1cclxuXHJcbi50ZXN0e1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogZ3JlZW47XHJcbn1cclxuXHJcbiJdfQ== */");
 
 /***/ }),
 
@@ -253,15 +253,15 @@ var MenuPage = /** @class */ (function () {
                 vertical: "top"
             },
             {
-                title: "Receipts",
+                title: "Poland trip",
                 url: "/menu/gallery",
-                icon: "images",
+                icon: "receipt",
                 vertical: "top"
             },
             {
-                title: "Receipts-test",
+                title: "Poland Trip Minimised",
                 url: "/menu/receipts-test",
-                icon: "code-working",
+                icon: "receipt",
                 vertical: "top"
             },
             {

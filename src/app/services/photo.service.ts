@@ -41,6 +41,7 @@ export class PhotoService {
   priceCrap: Observable<any[]>;
   item: Observable<Receipt[]>;
   costCal: number[] = []
+  uploadProgress$: Observable<number>
   
 
   //edit items
@@ -59,9 +60,7 @@ export class PhotoService {
       const data = a.payload.doc.data()as Receipt; 
       const id = a.payload.doc.id;
       const ItemsToAdd = data.cost
-      console.log(ItemsToAdd)
       this.costCal.push(ItemsToAdd)
-      console.log(id, data.cost) 
       return {id, ...data}
     }))
     );
@@ -97,16 +96,63 @@ export class PhotoService {
       var pictureLoad = this.photos[0].data
       //main task
       const task = ref.putString(pictureLoad, `data_url`).then((snapshot) => {
-        console.log("Upload is", progress, "% done.")
-        console.log('Uploaded a data_url string!');
         var progress = (snapshot.bytesTransferred / snapshot.totalBytes) *100
         console.log("Upload is", progress, "% done.")
-        // this.percentage = this.task.percentageChanges();
+        console.log('Uploaded a data_url string!');
+        console.log("Upload is", progress, "% done.")
+        
         snapshot.ref.getDownloadURL().then((downloadURL)=> {
           console.log("File Download link:", downloadURL)
           this.itemCollection.add({downloadURL: downloadURL, created: Date(), cost: 0, description: "Description not found", path: path})
           this.storage.remove("photos")
         })
+      });
+    console.log(this.photos[0].id, "Uploading this image",)
+    }, (err) => {
+     console.log("Camera issue: " + err);
+    });
+  }
+
+  uploadPicture() {
+    console.log("doing this thing now")
+    const options: CameraOptions = {
+      quality: 100,
+      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
+      saveToPhotoAlbum: false
+    }
+    this.camera.getPicture(options).then((imageURI) => {
+      // Add new photo to gallery
+      console.log("doing this now")
+      this.photos.unshift({
+        description: "somthing here. I would like to know how to edit this. how do i edit ionic storage once saved. pain in my ass ",
+        id: Date.now(), 
+        imageData: imageURI,
+        data: 'data:image/jpeg;base64,' + imageURI,
+      });
+      this.count ++ 
+      // Save all photos for later viewing
+      this.storage.set(this.id , this.photos);
+      console.log(this.photos)
+      //firestore 
+      const path = `receipts/${Date.now()}.jpeg`
+      const ref = this.afs.ref(path)
+      var pictureLoad = this.photos[0].data
+      //main task
+      const task = ref.putString(pictureLoad, `data_url`).then((snapshot) => {
+        console.log("Upload is", progress, "% done.")
+        console.log('Uploaded a data_url string!');
+        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) /100
+        console.log("Upload is", progress, "% done.")
+        this.percentage = this.task.percentageChanges();
+        snapshot.ref.getDownloadURL().then((downloadURL)=> {
+          console.log("File Download link:", downloadURL)
+          this.itemCollection.add({downloadURL: downloadURL, created: Date(), cost: 0, description: "Null", path: path})
+          this.storage.remove("photos")
+        })
+        this.uploadProgress$ = this.task.percentageChanges();
       });
     console.log(this.photos[0].id, "Uploading this image")
     }, (err) => {
@@ -138,10 +184,12 @@ export class PhotoService {
     })
   }
 
+  itemEdit:any = {};
   editItem(i){
     console.log("Working on editing", i)
     this.editState = true;
     this.itemToEdit = i;
+    
   }
   downloadPic(){
     

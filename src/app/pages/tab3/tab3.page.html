@@ -4,7 +4,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Photo Dev 3
+      Poland Trip slim
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,6 +12,13 @@
 <ion-content>
 
   <!-- Photo Section -->
+
+  <ion-card *ngFor="let cost of photoService.countCost | async">
+    <ion-card-header>
+      <ion-card-title>Total:  {{cost.totalCost}}</ion-card-title>
+      <ion-card-subtitle>Receipt Count: {{ cost.count }}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
   <!-- End -->
 
 
@@ -21,11 +28,11 @@
       <ion-card-subtitle>Dev Item List</ion-card-subtitle>
       <ion-card-title></ion-card-title>
     </ion-card-header>
-    <span *ngFor="let i of devpic | async">
+    <span *ngFor="let photo of photoService.receipts | async">
       <ion-item-sliding>
         <ion-item>
-          <ion-label>{{i.title}}</ion-label>
-          <ion-note slot="end" color="primary">£{{i.cost}}</ion-note>
+          <ion-label>{{photo.title}}</ion-label>
+          <ion-note slot="end" color="primary">£{{photo.cost}}</ion-note>
         </ion-item>
         <ion-item-options side="start">
           <ion-item-option color="secondary" (click)="editItem(i)">Edit Item</ion-item-option>
@@ -60,46 +67,33 @@
     </span>
   </ion-card>
 
-  <ion-card class="welcome-card">
-    <ion-card-header>
-      <ion-card-subtitle>Items</ion-card-subtitle>
-      <ion-card-title>Add a new item</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-label>Title: </ion-label>
-        <ion-input required minlength="2" ngModel name="title" #title="ngModel" id="title"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Price: </ion-label>
-        <ion-input required ngModel type="number" name="cost" #cost="ngModel" id="cost"></ion-input>
-      </ion-item>
-      <ion-button expand="full" color="primary" slot="start" (click)="createItem(title.value, cost.value)">Add to list</ion-button>
-    </ion-card-content>
-  </ion-card> 
 <!-- End -->
 
-<!-- Ionic Fab take a photo -->
+<!-- FABS -->
+
 <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-  <ion-fab-button (click)="takePicture()">
+  <ion-fab-button (click)="photoService.takePicture()">
     <ion-icon name="camera"></ion-icon>
   </ion-fab-button>
 </ion-fab>
-<!-- end -->
 
+<ion-fab vertical="bottom" horizontal="end" edge="false" slot="fixed">
+<ion-fab-button>
+  <ion-icon name="add"></ion-icon>
+</ion-fab-button>
+<ion-fab-list side="top">
+  <ion-fab-button color="light">
+    <ion-icon routerLink="/menu/gallery/" name="camera"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-button color="light">
+    <ion-icon routerLink="/menu/receipts-test/" name="list"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-button color="light" (click)="photoService.uploadPicture()">
+    <ion-icon name="cloud-upload-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab-list>
+</ion-fab>
 
-  <ion-fab vertical="bottom" horizontal="end" edge="false" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-list side="top">
-      <ion-fab-button color="light">
-        <ion-icon routerLink="/menu/gallery/" name="camera"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button color="light">
-        <ion-icon routerLink="/menu/receipts-test/" name="list"></ion-icon>
-      </ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
+<!-- FAB END -->
 
 </ion-content>

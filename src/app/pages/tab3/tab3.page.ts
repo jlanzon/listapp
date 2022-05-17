@@ -8,6 +8,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { Storage } from '@ionic/storage';
 import { map } from 'rxjs/operators';
 import { finalize, tap } from 'rxjs/operators';
+import { PhotoService } from 'src/app/services/photo.service';
 // import { PhotoService } from '../../services/photo.service';
 
 
@@ -40,7 +41,7 @@ export class Tab3Page {
 
   // public photoService: PhotoService
 
-  constructor(private camera: Camera, public storage: Storage, private afs: AngularFirestore, private storageafs: AngularFireStorage,) {
+  constructor( public photoService: PhotoService, public camera: Camera, public storage: Storage, private afs: AngularFirestore, private storageafs: AngularFireStorage,) {
     
     this.itemCollection = afs.collection<DevPic>("newcollection");
     this.item = this.itemCollection.valueChanges();

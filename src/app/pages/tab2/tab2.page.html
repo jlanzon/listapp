@@ -17,8 +17,8 @@
     <ion-card-subtitle>Receipt Count: {{ cost.count }}</ion-card-subtitle>
   </ion-card-header>
 </ion-card>
-<ion-card *ngIf="photoService.percentage | async as pct">
-  <ion-card-title class="ion-text-center">- Uploading image -</ion-card-title>
+<ion-card *ngIf="photoService.uploadProgress$ | async as pct">
+    <ion-card-title class="ion-text-center">-  Progress: {{ uploadProgress | async }}% Complete  -</ion-card-title>
   <ion-progress-bar [value]="pct"></ion-progress-bar>
 </ion-card>
 <!-- END -->
@@ -51,7 +51,7 @@
       <ion-card-content>
         <ion-item>
           <ion-label>Title: </ion-label>
-          <ion-input ngModel [placeholder]="photoService.itemToEdit.title" #updatedtitle="ngModel"></ion-input>
+          <ion-input [(ngModel)]="item" [placeholder]="photoService.itemToEdit.title" #updatedtitle="ngModel" name="title"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label>description: </ion-label>
@@ -85,6 +85,9 @@
       </ion-fab-button>
       <ion-fab-button color="light">
         <ion-icon routerLink="/menu/receipts-test/" name="list"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light" (click)="photoService.uploadPicture()">
+        <ion-icon name="cloud-upload-outline"></ion-icon>
       </ion-fab-button>
     </ion-fab-list>
   </ion-fab>

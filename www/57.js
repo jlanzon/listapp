@@ -13,14 +13,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_route_redirect", function() { return RouteRedirect; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_router", function() { return Router; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_router_link", function() { return RouterLink; });
-/* harmony import */ var D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/defineProperty */ "rePB");
-/* harmony import */ var D_Coding_App_envi_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ "o0o1");
-/* harmony import */ var D_Coding_App_envi_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(D_Coding_App_envi_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator */ "HaE+");
-/* harmony import */ var D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/toConsumableArray */ "KQm4");
-/* harmony import */ var D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createForOfIteratorHelper */ "uFwe");
-/* harmony import */ var D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck */ "1OyB");
-/* harmony import */ var D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass */ "vuIU");
+/* harmony import */ var C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/defineProperty */ "rePB");
+/* harmony import */ var C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ "o0o1");
+/* harmony import */ var C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator */ "HaE+");
+/* harmony import */ var C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/toConsumableArray */ "KQm4");
+/* harmony import */ var C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createForOfIteratorHelper */ "uFwe");
+/* harmony import */ var C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck */ "1OyB");
+/* harmony import */ var C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass */ "vuIU");
 /* harmony import */ var _core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./core-feeeff0d.js */ "c1op");
 /* harmony import */ var _config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./config-3c7f3790.js */ "AfW+");
 /* harmony import */ var _helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./helpers-46f4a262.js */ "aiEM");
@@ -39,7 +39,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var Route = /*#__PURE__*/function () {
   function Route(hostRef) {
-    Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_5__["default"])(this, Route);
+    Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_5__["default"])(this, Route);
 
     Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_7__["r"])(this, hostRef);
     /**
@@ -53,7 +53,7 @@ var Route = /*#__PURE__*/function () {
     this.ionRouteDataChanged = Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_7__["d"])(this, "ionRouteDataChanged", 7);
   }
 
-  Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_6__["default"])(Route, [{
+  Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_6__["default"])(Route, [{
     key: "onUpdate",
     value: function onUpdate(newValue) {
       this.ionRouteDataChanged.emit(newValue);
@@ -73,7 +73,7 @@ var Route = /*#__PURE__*/function () {
         return;
       }
 
-      var _iterator = Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__["default"])(keys1),
+      var _iterator = Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__["default"])(keys1),
           _step;
 
       try {
@@ -112,13 +112,13 @@ var Route = /*#__PURE__*/function () {
 
 var RouteRedirect = /*#__PURE__*/function () {
   function RouteRedirect(hostRef) {
-    Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_5__["default"])(this, RouteRedirect);
+    Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_5__["default"])(this, RouteRedirect);
 
     Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_7__["r"])(this, hostRef);
     this.ionRouteRedirectChanged = Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_7__["d"])(this, "ionRouteRedirectChanged", 7);
   }
 
-  Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_6__["default"])(RouteRedirect, [{
+  Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_6__["default"])(RouteRedirect, [{
     key: "propDidChange",
     value: function propDidChange() {
       this.ionRouteRedirectChanged.emit();
@@ -155,14 +155,14 @@ var generatePath = function generatePath(segments) {
 var chainToPath = function chainToPath(chain) {
   var path = [];
 
-  var _iterator2 = Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__["default"])(chain),
+  var _iterator2 = Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__["default"])(chain),
       _step2;
 
   try {
     for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
       var route = _step2.value;
 
-      var _iterator3 = Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__["default"])(route.path),
+      var _iterator3 = Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__["default"])(route.path),
           _step3;
 
       try {
@@ -197,7 +197,7 @@ var chainToPath = function chainToPath(chain) {
 };
 
 var writePath = function writePath(history, root, useHash, path, direction, state) {
-  var url = generatePath([].concat(Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__["default"])(parsePath(root)), Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__["default"])(path)));
+  var url = generatePath([].concat(Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__["default"])(parsePath(root)), Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__["default"])(path)));
 
   if (useHash) {
     url = '#' + url;
@@ -266,7 +266,7 @@ var parsePath = function parsePath(path) {
 var printRoutes = function printRoutes(routes) {
   console.group("[ion-core] ROUTES[".concat(routes.length, "]"));
 
-  var _iterator4 = Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__["default"])(routes),
+  var _iterator4 = Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__["default"])(routes),
       _step4;
 
   try {
@@ -274,7 +274,7 @@ var printRoutes = function printRoutes(routes) {
       var chain = _step4.value;
       var path = [];
       chain.forEach(function (r) {
-        return path.push.apply(path, Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__["default"])(r.path));
+        return path.push.apply(path, Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__["default"])(r.path));
       });
       var ids = chain.map(function (r) {
         return r.id;
@@ -297,7 +297,7 @@ var printRoutes = function printRoutes(routes) {
 var printRedirects = function printRedirects(redirects) {
   console.group("[ion-core] REDIRECTS[".concat(redirects.length, "]"));
 
-  var _iterator5 = Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__["default"])(redirects),
+  var _iterator5 = Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__["default"])(redirects),
       _step5;
 
   try {
@@ -318,13 +318,13 @@ var printRedirects = function printRedirects(redirects) {
 };
 
 var _writeNavState = /*#__PURE__*/function () {
-  var _ref = Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/D_Coding_App_envi_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee(root, chain, direction, index) {
+  var _ref = Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee(root, chain, direction, index) {
     var changed,
         outlet,
         route,
         result,
         _args = arguments;
-    return D_Coding_App_envi_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee$(_context) {
+    return C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
@@ -397,9 +397,9 @@ var _writeNavState = /*#__PURE__*/function () {
 }();
 
 var readNavState = /*#__PURE__*/function () {
-  var _ref2 = Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/D_Coding_App_envi_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee2(root) {
+  var _ref2 = Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee2(root) {
     var ids, outlet, node, id;
-    return D_Coding_App_envi_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee2$(_context2) {
+    return C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
@@ -550,7 +550,7 @@ var matchesPath = function matchesPath(inputPath, chain) {
     if (path[0] === '') {
       matchesDefault = true;
     } else {
-      var _iterator6 = Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__["default"])(path),
+      var _iterator6 = Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__["default"])(path),
           _step6;
 
       try {
@@ -618,7 +618,7 @@ var routerIDsToChain = function routerIDsToChain(ids, chains) {
     return i.id;
   });
 
-  var _iterator7 = Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__["default"])(chains),
+  var _iterator7 = Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__["default"])(chains),
       _step7;
 
   try {
@@ -654,7 +654,7 @@ var routerPathToChain = function routerPathToChain(path, chains) {
   var match = null;
   var matches = 0;
 
-  var _iterator8 = Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__["default"])(chains),
+  var _iterator8 = Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__["default"])(chains),
       _step8;
 
   try {
@@ -684,14 +684,14 @@ var computePriority = function computePriority(chain) {
   var score = 1;
   var level = 1;
 
-  var _iterator9 = Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__["default"])(chain),
+  var _iterator9 = Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__["default"])(chain),
       _step9;
 
   try {
     for (_iterator9.s(); !(_step9 = _iterator9.n()).done;) {
       var route = _step9.value;
 
-      var _iterator10 = Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__["default"])(route.path),
+      var _iterator10 = Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__["default"])(route.path),
           _step10;
 
       try {
@@ -723,12 +723,12 @@ var computePriority = function computePriority(chain) {
 
 var RouterSegments = /*#__PURE__*/function () {
   function RouterSegments(path) {
-    Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_5__["default"])(this, RouterSegments);
+    Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_5__["default"])(this, RouterSegments);
 
     this.path = path.slice();
   }
 
-  Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_6__["default"])(RouterSegments, [{
+  Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_6__["default"])(RouterSegments, [{
     key: "next",
     value: function next() {
       if (this.path.length > 0) {
@@ -793,7 +793,7 @@ var readProp = function readProp(el, prop) {
 var flattenRouterTree = function flattenRouterTree(nodes) {
   var routes = [];
 
-  var _iterator11 = Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__["default"])(nodes),
+  var _iterator11 = Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__["default"])(nodes),
       _step11;
 
   try {
@@ -823,7 +823,7 @@ var flattenNode = function flattenNode(chain, routes, node) {
     return;
   }
 
-  var _iterator12 = Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__["default"])(node.children),
+  var _iterator12 = Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_4__["default"])(node.children),
       _step12;
 
   try {
@@ -840,7 +840,7 @@ var flattenNode = function flattenNode(chain, routes, node) {
 
 var Router = /*#__PURE__*/function () {
   function Router(hostRef) {
-    Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_5__["default"])(this, Router);
+    Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_5__["default"])(this, Router);
 
     Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_7__["r"])(this, hostRef);
     this.previousPath = null;
@@ -874,11 +874,11 @@ var Router = /*#__PURE__*/function () {
     this.ionRouteDidChange = Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_7__["d"])(this, "ionRouteDidChange", 7);
   }
 
-  Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_6__["default"])(Router, [{
+  Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_6__["default"])(Router, [{
     key: "componentWillLoad",
     value: function () {
-      var _componentWillLoad = Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/D_Coding_App_envi_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee3() {
-        return D_Coding_App_envi_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee3$(_context3) {
+      var _componentWillLoad = Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee3() {
+        return C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee3$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
@@ -964,8 +964,8 @@ var Router = /*#__PURE__*/function () {
   }, {
     key: "printDebug",
     value: function () {
-      var _printDebug = Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/D_Coding_App_envi_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee4() {
-        return D_Coding_App_envi_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee4$(_context4) {
+      var _printDebug = Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee4() {
+        return C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee4$(_context4) {
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
@@ -993,10 +993,10 @@ var Router = /*#__PURE__*/function () {
   }, {
     key: "navChanged",
     value: function () {
-      var _navChanged = Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/D_Coding_App_envi_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee5(direction) {
+      var _navChanged = Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee5(direction) {
         var _yield$readNavState, ids, outlet, routes, chain, path;
 
-        return D_Coding_App_envi_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee5$(_context5) {
+        return C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee5$(_context5) {
           while (1) {
             switch (_context5.prev = _context5.next) {
               case 0:
@@ -1102,9 +1102,9 @@ var Router = /*#__PURE__*/function () {
   }, {
     key: "writeNavStateRoot",
     value: function () {
-      var _writeNavStateRoot = Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/D_Coding_App_envi_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee6(path, direction) {
+      var _writeNavStateRoot = Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee6(path, direction) {
         var redirects, redirect, redirectFrom, routes, chain;
-        return D_Coding_App_envi_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee6$(_context6) {
+        return C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee6$(_context6) {
           while (1) {
             switch (_context6.prev = _context6.next) {
               case 0:
@@ -1160,12 +1160,12 @@ var Router = /*#__PURE__*/function () {
   }, {
     key: "safeWriteNavState",
     value: function () {
-      var _safeWriteNavState = Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/D_Coding_App_envi_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee7(node, chain, direction, path, redirectFrom) {
+      var _safeWriteNavState = Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee7(node, chain, direction, path, redirectFrom) {
         var index,
             unlock,
             changed,
             _args7 = arguments;
-        return D_Coding_App_envi_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee7$(_context7) {
+        return C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee7$(_context7) {
           while (1) {
             switch (_context7.prev = _context7.next) {
               case 0:
@@ -1211,9 +1211,9 @@ var Router = /*#__PURE__*/function () {
   }, {
     key: "lock",
     value: function () {
-      var _lock = Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/D_Coding_App_envi_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee8() {
+      var _lock = Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee8() {
         var p, resolve;
-        return D_Coding_App_envi_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee8$(_context8) {
+        return C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee8$(_context8) {
           while (1) {
             switch (_context8.prev = _context8.next) {
               case 0:
@@ -1250,12 +1250,12 @@ var Router = /*#__PURE__*/function () {
   }, {
     key: "writeNavState",
     value: function () {
-      var _writeNavState2 = Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/D_Coding_App_envi_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee9(node, chain, direction, path, redirectFrom) {
+      var _writeNavState2 = Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee9(node, chain, direction, path, redirectFrom) {
         var index,
             routeEvent,
             changed,
             _args9 = arguments;
-        return D_Coding_App_envi_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee9$(_context9) {
+        return C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee9$(_context9) {
           while (1) {
             switch (_context9.prev = _context9.next) {
               case 0:
@@ -1353,7 +1353,7 @@ var RouterLink = /*#__PURE__*/function () {
   function RouterLink(hostRef) {
     var _this2 = this;
 
-    Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_5__["default"])(this, RouterLink);
+    Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_5__["default"])(this, RouterLink);
 
     Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_7__["r"])(this, hostRef);
     /**
@@ -1368,7 +1368,7 @@ var RouterLink = /*#__PURE__*/function () {
     };
   }
 
-  Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_6__["default"])(RouterLink, [{
+  Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_6__["default"])(RouterLink, [{
     key: "render",
     value: function render() {
       var _Object$assign;
@@ -1381,7 +1381,7 @@ var RouterLink = /*#__PURE__*/function () {
       };
       return Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_7__["h"])(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_7__["H"], {
         onClick: this.onClick,
-        class: Object.assign(Object.assign({}, Object(_theme_18cbe2cc_js__WEBPACK_IMPORTED_MODULE_10__["c"])(this.color)), (_Object$assign = {}, Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_Object$assign, mode, true), Object(D_Coding_App_envi_listapp_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_Object$assign, 'ion-activatable', true), _Object$assign))
+        class: Object.assign(Object.assign({}, Object(_theme_18cbe2cc_js__WEBPACK_IMPORTED_MODULE_10__["c"])(this.color)), (_Object$assign = {}, Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_Object$assign, mode, true), Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_Object$assign, 'ion-activatable', true), _Object$assign))
       }, Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_7__["h"])("a", Object.assign({}, attrs), Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_7__["h"])("slot", null)));
     }
   }], [{

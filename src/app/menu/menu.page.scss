@@ -1,4 +1,13 @@
+.backgroundHeader{
+    background: rgb(9,0,170);
+background: linear-gradient(90deg, rgba(9,0,170,1) 0%, rgba(0,31,214,1) 40%, rgba(0,228,255,1) 100%);
+}
 
 .active-item {
     color: var(--ion-color-primary);
 }
+
+.test{
+    background-color: green;
+}
+
