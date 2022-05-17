@@ -30,7 +30,7 @@ export class PhotoService {
   public photos: Photo[] = [];
   id = "photos"
   count = 1
-  task: AngularFireUploadTask;
+  task:  any;
   percentage: Observable<number>;
   snapshotdb: Observable<any>;
   downloadURL: Observable<any>;
@@ -41,8 +41,8 @@ export class PhotoService {
   priceCrap: Observable<any[]>;
   item: Observable<Receipt[]>;
   costCal: number[] = []
-  uploadProgress$: Observable<number>
-  
+  uploadProgress: Observable<number>
+  isUploading: boolean = false
 
   //edit items
   editState: boolean = false
@@ -51,7 +51,9 @@ export class PhotoService {
 
   constructor(private camera: Camera, private storage: Storage, private db: AngularFirestore, private afs: AngularFireStorage) { 
 
-    this.itemCollection = db.collection<Receipt>("Receipts", ref => ref.orderBy("created", "desc"));
+
+
+    this.itemCollection = db.collection<Receipt>("Receipts", ref => ref.orderBy("created"));
     this.priceCollection = db.collection<Price>("RunningCost");
     this.countCost = this.priceCollection.valueChanges()
     // this.item = this.itemCollection.valueChanges();
@@ -90,6 +92,7 @@ export class PhotoService {
       // Save all photos for later viewing
       this.storage.set(this.id , this.photos);
       console.log(this.photos)
+      this.isUploading = true
       //firestore 
       const path = `receipts/${Date.now()}.jpeg`
       const ref = this.afs.ref(path)
@@ -103,6 +106,7 @@ export class PhotoService {
         
         snapshot.ref.getDownloadURL().then((downloadURL)=> {
           console.log("File Download link:", downloadURL)
+          this.isUploading = false
           this.itemCollection.add({downloadURL: downloadURL, created: Date(), cost: 0, description: "Description not found", path: path})
           this.storage.remove("photos")
         })
@@ -140,25 +144,47 @@ export class PhotoService {
       const path = `receipts/${Date.now()}.jpeg`
       const ref = this.afs.ref(path)
       var pictureLoad = this.photos[0].data
+      
       //main task
-      const task = ref.putString(pictureLoad, `data_url`).then((snapshot) => {
+      this.task = ref.putString(pictureLoad, `data_url`).then((snapshot) => {
         console.log("Upload is", progress, "% done.")
+        this.isUploading = true
         console.log('Uploaded a data_url string!');
-        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) /100
+        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) 
         console.log("Upload is", progress, "% done.")
-        this.percentage = this.task.percentageChanges();
+        this.percentage = this.uploadProgress
         snapshot.ref.getDownloadURL().then((downloadURL)=> {
           console.log("File Download link:", downloadURL)
           this.itemCollection.add({downloadURL: downloadURL, created: Date(), cost: 0, description: "Null", path: path})
           this.storage.remove("photos")
         })
-        this.uploadProgress$ = this.task.percentageChanges();
       });
+      
     console.log(this.photos[0].id, "Uploading this image")
+    this.isUploading = false
+    this.percentage = this.task.percentageChanges();
     }, (err) => {
      console.log("Camera issue: " + err);
     });
   }
+
+
+  // uploadTest(event) {
+  //   const file = event.target.files[0];
+  //   const filePath = `receipts/${Date.now()}.jpeg`
+  //   const fileRef = this.afs.ref(filePath);
+  //   const task = this.afs.upload(filePath, file);
+
+  //   // observe percentage changes
+  //   const uploadProgressbefore = task.percentageChanges();
+  //   this.uploadProgress = uploadProgressbefore 
+  //   console.log(uploadProgressbefore)
+  //   // get notified when the download URL is available
+  //   task.snapshotChanges().pipe(
+  //       finalize(() => this.downloadURL = fileRef.getDownloadURL() )
+  //    )
+  //   .subscribe()
+  // }
 
   isActive(snapshot) {
     return snapshot.state === 'running' && snapshot.bytesTransferred < snapshot.totalBytes;
@@ -205,10 +231,10 @@ export class PhotoService {
     return this.count
   }
 
-  clearState(photo){
+  clearState(i){
     this.editState = false;
     this.itemToEdit = null;
-    console.log("closed", photo)
+    console.log("closed", i) 
   }
 
   updateItem(i: Receipt, updatedtitle,updateddescription , updatedCost: number ){
