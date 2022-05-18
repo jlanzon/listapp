@@ -558,6 +558,11 @@ var Select = /*#__PURE__*/function () {
       return this.getText() !== '';
     }
   }, {
+    key: "childOpts",
+    get: function get() {
+      return Array.from(this.el.querySelectorAll('ion-select-option'));
+    }
+  }, {
     key: "getText",
     value: function getText() {
       var selectedText = this.selectedText;
@@ -644,11 +649,6 @@ var Select = /*#__PURE__*/function () {
           return _this7.buttonEl = btnEl;
         }
       }));
-    }
-  }, {
-    key: "childOpts",
-    get: function get() {
-      return Array.from(this.el.querySelectorAll('ion-select-option'));
     }
   }, {
     key: "el",

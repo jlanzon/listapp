@@ -4,50 +4,53 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Poland Trip slim
+      Gallery
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-  <!-- Photo Section -->
-
-  <ion-card *ngFor="let cost of photoService.countCost | async">
-    <ion-card-header>
-      <ion-card-title>Total:  {{cost.totalCost}}</ion-card-title>
-      <ion-card-subtitle>Receipt Count: {{ cost.count }}</ion-card-subtitle>
-    </ion-card-header>
-  </ion-card>
-  <!-- End -->
-
-
-  <!-- List Section -->
-  <ion-card class="welcome-card">
-    <ion-card-header>
-      <ion-card-subtitle>Dev Item List</ion-card-subtitle>
-      <ion-card-title></ion-card-title>
-    </ion-card-header>
-    <span *ngFor="let photo of photoService.receipts | async">
-      <ion-item-sliding>
-        <ion-item>
-          <ion-label>{{photo.title}}</ion-label>
-          <ion-note slot="end" color="primary">£{{photo.cost}}</ion-note>
-        </ion-item>
-        <ion-item-options side="start">
-          <ion-item-option color="secondary" (click)="editItem(i)">Edit Item</ion-item-option>
-        </ion-item-options>
-          <ion-item-options side="end">
-            <ion-item-option color="danger" (click)="deleteItem(i)">Delete</ion-item-option>
-          </ion-item-options>
-      </ion-item-sliding>
-      <!--Edit items-->
-      <ion-card class="welcome-card" *ngIf="editState && itemToEdit.id == i.id">
+<!-- Total price here -->
+<ion-card *ngFor="let cost of photoService.countCost | async">
+  <ion-card-header>
+    <ion-card-title>Total:  {{cost.totalCost}}</ion-card-title>
+    <ion-card-subtitle>Receipt Count: {{ cost.count }}</ion-card-subtitle>
+  </ion-card-header>
+</ion-card>
+<!-- Progress START -->
+<ion-card *ngIf="photoService.isUploading == true">
+  <ion-card-header>
+    <ion-card-title>UPLOADING</ion-card-title>
+    <ion-progress-bar type="indeterminate"></ion-progress-bar>
+  </ion-card-header>
+</ion-card>
+<!-- Progress END -->
+<!-- DATA START -->
+  <ion-list *ngFor="let photo of photoService.receipts | async">
+    <ion-item>
+        <ion-buttons slot="end">
+          <ion-button (click)="photoService.editItem(photo)">
+            <ion-icon slot="icon-only" name="create"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      <ion-avatar slot="start">
+        <img [src]="photo.downloadURL" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{photo.title}}</h2>
+        <h3>{{photo.created}}</h3>
+        <p>{{photo.description}}</p>
+        <p slot="end">£ {{photo.cost}}</p>
+      </ion-label>
+      <ion-card class="welcome-card" *ngIf="photoService.editState && photoService.itemToEdit.id == photo.id">
         <ion-toolbar>
           <!--MENU-->
           <ion-buttons slot="end">
-            <ion-button size="small" shape="round" fill="outline" (click)="clearState(i)">
+            <ion-button size="small" shape="round" (click)="photoService.clearState(photo)">
               <ion-icon name="close"></ion-icon>
+            </ion-button>
+            <ion-button size="small" shape="round" [href]="photo.downloadURL" download>
+              <ion-icon name="download"></ion-icon>
             </ion-button>
           </ion-buttons>
           <ion-title>EDIT ITEM</ion-title>
@@ -55,45 +58,46 @@
         <ion-card-content>
           <ion-item>
             <ion-label>Title: </ion-label>
-            <ion-input ngModel [placeholder]="itemToEdit.title" #updatedtitle="ngModel"></ion-input>
+            <ion-input [(ngModel)]="item" [placeholder]="photoService.itemToEdit.title" #updatedtitle="ngModel" name="title"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>description: </ion-label>
+            <ion-input ngModel type="any"  [placeholder]="photoService.itemToEdit.description" #updateddescription="ngModel"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label>Price: </ion-label>
-            <ion-input ngModel [placeholder]="itemToEdit.cost" #updatedcost="ngModel"></ion-input>
+            <ion-input ngModel type="number"  [placeholder]="photoService.itemToEdit.cost" #updatedcost="ngModel"></ion-input>
           </ion-item>
-          <ion-button expand="full" color="primary" (click)="updateItem(i, updatedtitle.value, updatedcost.value)">Update Item</ion-button>
+          <ion-button expand="full" color="primary" (click)="photoService.updateItem(photo, updatedtitle.value, updateddescription.value, updatedcost.value)">Update Item</ion-button>
+          <ion-button expand="block"(click)="photoService.removePic(photo)" color="danger"> Delete picture</ion-button>
         </ion-card-content>
       </ion-card>
-    </span>
-  </ion-card>
+    </ion-item>    
+  </ion-list>
+<!-- DATA END -->
+    
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+      <ion-fab-button (click)="photoService.takePicture()">
+        <ion-icon name="camera"></ion-icon>
+      </ion-fab-button>
+  </ion-fab>
 
-<!-- End -->
+  <ion-fab vertical="bottom" horizontal="end" edge="false" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="light">
+        <ion-icon routerLink="/menu/gallery/" name="camera"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light">
+        <ion-icon routerLink="/menu/receipts-test/" name="list"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light" (click)="photoService.uploadPicture()">
+        <ion-icon name="cloud-upload-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 
-<!-- FABS -->
-
-<ion-fab vertical="bottom" horizontal="center" slot="fixed">
-  <ion-fab-button (click)="photoService.takePicture()">
-    <ion-icon name="camera"></ion-icon>
-  </ion-fab-button>
-</ion-fab>
-
-<ion-fab vertical="bottom" horizontal="end" edge="false" slot="fixed">
-<ion-fab-button>
-  <ion-icon name="add"></ion-icon>
-</ion-fab-button>
-<ion-fab-list side="top">
-  <ion-fab-button color="light">
-    <ion-icon routerLink="/menu/gallery/" name="camera"></ion-icon>
-  </ion-fab-button>
-  <ion-fab-button color="light">
-    <ion-icon routerLink="/menu/receipts-test/" name="list"></ion-icon>
-  </ion-fab-button>
-  <ion-fab-button color="light" (click)="photoService.uploadPicture()">
-    <ion-icon name="cloud-upload-outline"></ion-icon>
-  </ion-fab-button>
-</ion-fab-list>
-</ion-fab>
-
-<!-- FAB END -->
 
 </ion-content>

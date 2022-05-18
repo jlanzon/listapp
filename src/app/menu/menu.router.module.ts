@@ -36,6 +36,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'currency-converter',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/tab4/tab4.module#Tab4PageModule'
+          }
+        ]
+      },
+      {
         path: "profile",
         children: [
           { 

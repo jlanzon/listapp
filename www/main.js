@@ -788,6 +788,10 @@ var map = {
 		"default~pages-tab2-tab2-module~pages-tab3-tab3-module",
 		"pages-tab3-tab3-module"
 	],
+	"../pages/tab4/tab4.module": [
+		"GXrT",
+		"pages-tab4-tab4-module"
+	],
 	"../pages/terms/terms.module": [
 		"91Gy",
 		"pages-terms-terms-module"

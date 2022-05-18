@@ -119,6 +119,11 @@ var RippleEffect = /*#__PURE__*/function () {
       return addRipple;
     }()
   }, {
+    key: "unbounded",
+    get: function get() {
+      return this.type === 'unbounded';
+    }
+  }, {
     key: "render",
     value: function render() {
       var _class;
@@ -128,11 +133,6 @@ var RippleEffect = /*#__PURE__*/function () {
         role: "presentation",
         class: (_class = {}, Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, mode, true), Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'unbounded', this.unbounded), _class)
       });
-    }
-  }, {
-    key: "unbounded",
-    get: function get() {
-      return this.type === 'unbounded';
     }
   }, {
     key: "el",

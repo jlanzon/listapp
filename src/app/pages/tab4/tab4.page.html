@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      currency converter
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!-- DATA START -->
+<ion-card>
+  <ion-label>
+    API CONVERTER
+  </ion-label>
+  <ion-item>
+    <ion-input value="From:" [(ngModel)]="from"></ion-input>
+    <ion-input value="To:" [(ngModel)]="to"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input value="Amount:" [(ngModel)]="amount"></ion-input>
+  </ion-item>
+  <ion-button (click)="requestData()">Submit</ion-button>
+</ion-card>
+<ion-card>
+  <ion-item>
+    <ion-icon name="cash" slot="start"></ion-icon>
+    <ion-label>Result: {{text.result}}</ion-label>
+  </ion-item>
+</ion-card>
+
+<!-- OFFLINE DATA -->
+<ion-card>
+  <ion-label>
+      OFFLINE CONVERTER: (HARD CODED) PLN TO GBP
+    </ion-label>
+  <ion-item>
+    <ion-input value="From:" [(ngModel)]="fromOff"></ion-input>
+    <ion-input value="To:" [(ngModel)]="toOff"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input value="Amount:" [(ngModel)]="amountOff"></ion-input>
+  </ion-item>
+  <ion-button (click)="requestDataOff()">Submit</ion-button>
+</ion-card>
+<ion-card>
+  <ion-item>
+    <ion-icon name="cash" slot="start"></ion-icon>
+    <ion-label>Result: {{resultOff}}</ion-label>
+    <ion-label>
+      This is not 100% accurate
+    </ion-label>
+  </ion-item>
+</ion-card>
+
+
+
+<!-- DATA END -->
+  
+
+  <ion-fab vertical="bottom" horizontal="end" edge="false" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="light">
+        <ion-icon routerLink="/menu/gallery/" name="camera"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light">
+        <ion-icon routerLink="/menu/receipts-test/" name="list"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light" (click)="photoService.uploadPicture()">
+        <ion-icon name="cloud-upload-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+
+</ion-content>

@@ -428,6 +428,11 @@ var Tabs = /*#__PURE__*/function () {
       return selectedTab !== undefined && selectedTab !== leavingTab && !this.transitioning;
     }
   }, {
+    key: "tabs",
+    get: function get() {
+      return Array.from(this.el.querySelectorAll('ion-tab'));
+    }
+  }, {
     key: "render",
     value: function render() {
       return Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_4__["h"])(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_4__["H"], {
@@ -439,11 +444,6 @@ var Tabs = /*#__PURE__*/function () {
       }, Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_4__["h"])("slot", null)), Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_4__["h"])("slot", {
         name: "bottom"
       }));
-    }
-  }, {
-    key: "tabs",
-    get: function get() {
-      return Array.from(this.el.querySelectorAll('ion-tab'));
     }
   }, {
     key: "el",

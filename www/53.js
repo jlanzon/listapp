@@ -281,8 +281,8 @@ var Refresher = /*#__PURE__*/function () {
       if (this.state !== 1
       /* Inactive */
       ) {
-          return false;
-        } // if the scrollTop is greater than zero then it's
+        return false;
+      } // if the scrollTop is greater than zero then it's
       // not possible to pull the content down yet
 
 
@@ -350,21 +350,21 @@ var Refresher = /*#__PURE__*/function () {
       if (this.state === 1
       /* Inactive */
       ) {
-          // this refresh is not already actively pulling down
-          // get the content's scrollTop
-          var scrollHostScrollTop = this.scrollEl.scrollTop; // if the scrollTop is greater than zero then it's
-          // not possible to pull the content down yet
+        // this refresh is not already actively pulling down
+        // get the content's scrollTop
+        var scrollHostScrollTop = this.scrollEl.scrollTop; // if the scrollTop is greater than zero then it's
+        // not possible to pull the content down yet
 
-          if (scrollHostScrollTop > 0) {
-            this.progress = 0;
-            return;
-          } // content scrolled all the way to the top, and dragging down
+        if (scrollHostScrollTop > 0) {
+          this.progress = 0;
+          return;
+        } // content scrolled all the way to the top, and dragging down
 
 
-          this.state = 2
-          /* Pulling */
-          ;
-        } // prevent native scroll events
+        this.state = 2
+        /* Pulling */
+        ;
+      } // prevent native scroll events
 
 
       if (ev.cancelable) {
@@ -422,17 +422,17 @@ var Refresher = /*#__PURE__*/function () {
       if (this.state === 4
       /* Ready */
       ) {
-          // they pulled down far enough, so it's ready to refresh
-          this.beginRefresh();
-        } else if (this.state === 2
+        // they pulled down far enough, so it's ready to refresh
+        this.beginRefresh();
+      } else if (this.state === 2
       /* Pulling */
       ) {
-          // they were pulling down, but didn't pull down far enough
-          // set the content back to it's original location
-          // and close the refresher
-          // set that the refresh is actively cancelling
-          this.cancel();
-        }
+        // they were pulling down, but didn't pull down far enough
+        // set the content back to it's original location
+        // and close the refresher
+        // set that the refresh is actively cancelling
+        this.cancel();
+      }
     }
   }, {
     key: "beginRefresh",

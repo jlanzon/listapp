@@ -35,7 +35,13 @@ export class MenuPage {
       url: "/menu/dev",
       icon: "code",
       vertical: "top"
-    },    
+    },  
+    {
+      title: "Currency Converter",
+      url: "/menu/currency-converter",
+      icon: "cash",
+      vertical: "top"
+    },   
   ];
 
   selectedPath = "";

@@ -133,6 +133,15 @@ var routes = [
                 ]
             },
             {
+                path: 'currency-converter',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: '../pages/tab4/tab4.module#Tab4PageModule'
+                    }
+                ]
+            },
+            {
                 path: "profile",
                 children: [
                     {
@@ -268,6 +277,12 @@ var MenuPage = /** @class */ (function () {
                 title: "Dev Environment ",
                 url: "/menu/dev",
                 icon: "code",
+                vertical: "top"
+            },
+            {
+                title: "Currency Converter",
+                url: "/menu/currency-converter",
+                icon: "cash",
                 vertical: "top"
             },
         ];

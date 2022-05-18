@@ -196,6 +196,16 @@ var SegmentButton = /*#__PURE__*/function () {
       }
     }
   }, {
+    key: "hasLabel",
+    get: function get() {
+      return !!this.el.querySelector('ion-label');
+    }
+  }, {
+    key: "hasIcon",
+    get: function get() {
+      return !!this.el.querySelector('ion-icon');
+    }
+  }, {
     key: "render",
     value: function render() {
       var _class;
@@ -219,16 +229,6 @@ var SegmentButton = /*#__PURE__*/function () {
       }, Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_4__["h"])("slot", null), mode === 'md' && Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_4__["h"])("ion-ripple-effect", null)), Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_4__["h"])("div", {
         class: "segment-button-indicator"
       }));
-    }
-  }, {
-    key: "hasLabel",
-    get: function get() {
-      return !!this.el.querySelector('ion-label');
-    }
-  }, {
-    key: "hasIcon",
-    get: function get() {
-      return !!this.el.querySelector('ion-icon');
     }
   }, {
     key: "el",

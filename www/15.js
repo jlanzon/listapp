@@ -102,6 +102,23 @@ var Button = /*#__PURE__*/function () {
       this.inItem = !!this.el.closest('ion-item') || !!this.el.closest('ion-item-divider');
     }
   }, {
+    key: "hasIconOnly",
+    get: function get() {
+      return !!this.el.querySelector('ion-icon[slot="icon-only"]');
+    }
+  }, {
+    key: "rippleType",
+    get: function get() {
+      var hasClearFill = this.fill === undefined || this.fill === 'clear'; // If the button is in a toolbar, has a clear fill (which is the default)
+      // and only has an icon we use the unbounded "circular" ripple effect
+
+      if (hasClearFill && this.hasIconOnly && this.inToolbar) {
+        return 'unbounded';
+      }
+
+      return 'bounded';
+    }
+  }, {
     key: "render",
     value: function render() {
       var _Object$assign;
@@ -155,23 +172,6 @@ var Button = /*#__PURE__*/function () {
       })), mode === 'md' && Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_3__["h"])("ion-ripple-effect", {
         type: this.rippleType
       })));
-    }
-  }, {
-    key: "hasIconOnly",
-    get: function get() {
-      return !!this.el.querySelector('ion-icon[slot="icon-only"]');
-    }
-  }, {
-    key: "rippleType",
-    get: function get() {
-      var hasClearFill = this.fill === undefined || this.fill === 'clear'; // If the button is in a toolbar, has a clear fill (which is the default)
-      // and only has an icon we use the unbounded "circular" ripple effect
-
-      if (hasClearFill && this.hasIconOnly && this.inToolbar) {
-        return 'unbounded';
-      }
-
-      return 'bounded';
     }
   }, {
     key: "el",

@@ -97,6 +97,33 @@ var BackButton = /*#__PURE__*/function () {
   }
 
   Object(C_Users_Lenovo_Desktop_Coding_listapp_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__["default"])(BackButton, [{
+    key: "backButtonIcon",
+    get: function get() {
+      return this.icon != null ? this.icon : _config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_6__["b"].get('backButtonIcon', 'arrow-back');
+    }
+  }, {
+    key: "backButtonText",
+    get: function get() {
+      var defaultBackButtonText = this.mode === 'ios' ? 'Back' : null;
+      return this.text != null ? this.text : _config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_6__["b"].get('backButtonText', defaultBackButtonText);
+    }
+  }, {
+    key: "hasIconOnly",
+    get: function get() {
+      return this.backButtonIcon && !this.backButtonText;
+    }
+  }, {
+    key: "rippleType",
+    get: function get() {
+      // If the button only has an icon we use the unbounded
+      // "circular" ripple effect
+      if (this.hasIconOnly) {
+        return 'unbounded';
+      }
+
+      return 'bounded';
+    }
+  }, {
     key: "render",
     value: function render() {
       var _Object$assign;
@@ -127,33 +154,6 @@ var BackButton = /*#__PURE__*/function () {
       }, backButtonText)), mode === 'md' && Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_5__["h"])("ion-ripple-effect", {
         type: this.rippleType
       })));
-    }
-  }, {
-    key: "backButtonIcon",
-    get: function get() {
-      return this.icon != null ? this.icon : _config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_6__["b"].get('backButtonIcon', 'arrow-back');
-    }
-  }, {
-    key: "backButtonText",
-    get: function get() {
-      var defaultBackButtonText = this.mode === 'ios' ? 'Back' : null;
-      return this.text != null ? this.text : _config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_6__["b"].get('backButtonText', defaultBackButtonText);
-    }
-  }, {
-    key: "hasIconOnly",
-    get: function get() {
-      return this.backButtonIcon && !this.backButtonText;
-    }
-  }, {
-    key: "rippleType",
-    get: function get() {
-      // If the button only has an icon we use the unbounded
-      // "circular" ripple effect
-      if (this.hasIconOnly) {
-        return 'unbounded';
-      }
-
-      return 'bounded';
     }
   }, {
     key: "el",

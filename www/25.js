@@ -1106,6 +1106,18 @@ var Datetime = /*#__PURE__*/function () {
       return 0;
     }
   }, {
+    key: "text",
+    get: function get() {
+      // create the text of the formatted data
+      var template = this.displayFormat || this.pickerFormat || DEFAULT_FORMAT;
+
+      if (this.value === undefined || this.value === null || this.value.length === 0) {
+        return;
+      }
+
+      return renderDatetime(template, this.datetimeValue, this.locale);
+    }
+  }, {
     key: "hasValue",
     value: function hasValue() {
       return this.text !== undefined;
@@ -1162,18 +1174,6 @@ var Datetime = /*#__PURE__*/function () {
           return _this5.buttonEl = btnEl;
         }
       }));
-    }
-  }, {
-    key: "text",
-    get: function get() {
-      // create the text of the formatted data
-      var template = this.displayFormat || this.pickerFormat || DEFAULT_FORMAT;
-
-      if (this.value === undefined || this.value === null || this.value.length === 0) {
-        return;
-      }
-
-      return renderDatetime(template, this.datetimeValue, this.locale);
     }
   }, {
     key: "el",

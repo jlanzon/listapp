@@ -193,8 +193,8 @@ var ReorderGroup = /*#__PURE__*/function () {
       if (this.selectedItemEl || this.state !== 0
       /* Idle */
       ) {
-          return false;
-        }
+        return false;
+      }
 
       var target = ev.event.target;
       var reorderEl = target.closest('ion-reorder');
@@ -325,31 +325,31 @@ var ReorderGroup = /*#__PURE__*/function () {
       if (selectedItemEl && this.state === 2
       /* Complete */
       ) {
-          var children = this.el.children;
-          var len = children.length;
-          var toIndex = this.lastToIndex;
-          var fromIndex = indexForItem(selectedItemEl);
+        var children = this.el.children;
+        var len = children.length;
+        var toIndex = this.lastToIndex;
+        var fromIndex = indexForItem(selectedItemEl);
 
-          if (toIndex !== fromIndex && (!listOrReorder || listOrReorder === true)) {
-            var ref = fromIndex < toIndex ? children[toIndex + 1] : children[toIndex];
-            this.el.insertBefore(selectedItemEl, ref);
-          }
-
-          if (Array.isArray(listOrReorder)) {
-            listOrReorder = reorderArray(listOrReorder, fromIndex, toIndex);
-          }
-
-          for (var i = 0; i < len; i++) {
-            children[i].style['transform'] = '';
-          }
-
-          selectedItemEl.style.transition = '';
-          selectedItemEl.classList.remove(ITEM_REORDER_SELECTED);
-          this.selectedItemEl = undefined;
-          this.state = 0
-          /* Idle */
-          ;
+        if (toIndex !== fromIndex && (!listOrReorder || listOrReorder === true)) {
+          var ref = fromIndex < toIndex ? children[toIndex + 1] : children[toIndex];
+          this.el.insertBefore(selectedItemEl, ref);
         }
+
+        if (Array.isArray(listOrReorder)) {
+          listOrReorder = reorderArray(listOrReorder, fromIndex, toIndex);
+        }
+
+        for (var i = 0; i < len; i++) {
+          children[i].style['transform'] = '';
+        }
+
+        selectedItemEl.style.transition = '';
+        selectedItemEl.classList.remove(ITEM_REORDER_SELECTED);
+        this.selectedItemEl = undefined;
+        this.state = 0
+        /* Idle */
+        ;
+      }
 
       return listOrReorder;
     }

@@ -17,15 +17,19 @@
     <ion-card-subtitle>Receipt Count: {{ cost.count }}</ion-card-subtitle>
   </ion-card-header>
 </ion-card>
-<ion-card *ngIf="photoService.uploadProgress$ | async as pct">
-    <ion-card-title class="ion-text-center">-  Progress: {{ uploadProgress | async }}% Complete  -</ion-card-title>
-  <ion-progress-bar [value]="pct"></ion-progress-bar>
+<!-- Progress START -->
+<ion-card *ngIf="photoService.isUploading == true">
+  <ion-card-header>
+    <ion-card-title>UPLOADING</ion-card-title>
+    <ion-progress-bar type="indeterminate"></ion-progress-bar>
+  </ion-card-header>
 </ion-card>
+<!-- Progress END -->
 <!-- END -->
   <ion-card *ngFor="let photo of photoService.receipts | async">
     <img [src]="photo.downloadURL"/>
     <ion-card-header>
-      <ion-card-subtitle>Picture</ion-card-subtitle>
+      <ion-card-subtitle>Receipt</ion-card-subtitle>
       <ion-card-subtitle>{{ photo.created }}</ion-card-subtitle>
       <ion-card-title>{{ photo.title }}</ion-card-title>
     </ion-card-header>
